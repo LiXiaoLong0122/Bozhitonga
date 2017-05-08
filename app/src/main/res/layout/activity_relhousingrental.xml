@@ -77,13 +77,26 @@
                     android:textColor="@drawable/rb_text_bg" />
             </RadioGroup>
 
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/icon_addpic_focused" />
+            <RelativeLayout
+                android:id="@+id/camera"
+                android:layout_width="fill_parent"
+                android:layout_height="190dp"
+                android:background="@color/white"
+                android:orientation="horizontal" >
+
+                <GridView
+                    android:id="@+id/noScrollgridview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="190dp"
+                    android:layout_marginLeft="5dp"
+                    android:horizontalSpacing="3dp"
+                    android:numColumns="4"
+                    android:scrollbars="none"
+                    android:layout_margin="10dp"
+                    android:verticalSpacing="5dp" >
+                </GridView>
+
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"

@@ -1,6 +1,10 @@
 package com.example.bozhitong.activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
@@ -10,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -17,10 +22,20 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.bozhitong.ActwildlyTwoActivity;
+import com.example.bozhitong.GalleryActivity;
 import com.example.bozhitong.NoCertificationPopActivity;
 import com.example.bozhitong.R;
 import com.example.bozhitong.fragment.adapter.StringListAdapter;
+import com.example.bozhitong.photo.adapter.GridAdapter;
+import com.example.bozhitong.photo.util.Bimp;
+import com.example.bozhitong.photo.util.FileUtils;
+import com.example.bozhitong.photo.util.ImageItem;
+import com.example.bozhitong.photo.util.PublicWay;
+import com.example.bozhitong.photo.util.Res;
+import com.example.bozhitong.utils.ContentValuse;
 import com.example.bozhitong.utils.DrawerLayoutUtils;
+import com.example.bozhitong.utils.PopupwindowPhoto;
 import com.example.bozhitong.utils.Tools;
 
 import java.util.ArrayList;
@@ -41,6 +56,14 @@ public class ExpressWarranty extends FragmentActivity implements OnClickListener
     private TextView tv;
     private ListView timeList;
 private ArrayList<String> itemList=new ArrayList<String>();
+
+
+    private GridView noScrollgridview;
+    private GridAdapter adapter;
+
+    private PopupwindowPhoto pop;
+    public static Bitmap bimap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -55,6 +78,7 @@ private ArrayList<String> itemList=new ArrayList<String>();
         DrawerLayoutUtils.initEvents(mDrawerLayout);
         initFragmentView();
 
+        initPhoto();
 
         Intent intent = new Intent();
         intent.setClass(this, NoCertificationPopActivity.class);
@@ -132,6 +156,42 @@ private ArrayList<String> itemList=new ArrayList<String>();
 
             }
         });
+
+
+
+        noScrollgridview = (GridView) findViewById(R.id.noScrollgridview);
+        noScrollgridview.setSelector(new ColorDrawable(Color.TRANSPARENT));
+        adapter = new GridAdapter(this);
+        adapter.update();
+        noScrollgridview.setAdapter(adapter);
+        noScrollgridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+                                    long arg3) {
+                if (arg2 == Bimp.tempSelectBitmap.size()) {
+
+                    pop.showpopPhotoAtLocation(Gravity.BOTTOM, 0, 0);
+
+                } else {
+                    Intent intent = new Intent(ExpressWarranty.this,
+                            GalleryActivity.class);
+                    intent.putExtra("position", "1");
+                    intent.putExtra("ID", arg2);
+                    startActivity(intent);
+                }
+            }
+        });
+
+
+    }
+    private void initPhoto() {
+        pop = new PopupwindowPhoto(this);
+
+        Res.init(this);
+        bimap = BitmapFactory.decodeResource(getResources(),
+                R.drawable.icon_addpic_unfocused);
+        PublicWay.activityList.add(this);
+
     }
 
     private void initFragmentView() {
@@ -177,5 +237,42 @@ private ArrayList<String> itemList=new ArrayList<String>();
             default:
                 break;
         }
+    }
+
+    public void onStart() {
+        adapter.update();
+        super.onStart();
+    }
+
+
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+
+        switch (requestCode) {
+            case ContentValuse.TAKE_PICTURE:
+                if (Bimp.tempSelectBitmap.size() < 9 && resultCode == RESULT_OK) {
+
+                    String fileName = String.valueOf(System.currentTimeMillis());
+                    Bitmap bm = (Bitmap) data.getExtras().get("data");
+                    FileUtils.saveBitmap(bm, fileName);
+
+                    ImageItem takePhoto = new ImageItem();
+                    takePhoto.setBitmap(bm);
+                    Bimp.tempSelectBitmap.add(takePhoto);
+                }
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        adapter.notifyDataSetChanged();
+        Bimp.tempSelectBitmap.clear();
+        Bimp.max = 0;
     }
 }
