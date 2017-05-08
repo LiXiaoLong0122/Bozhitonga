@@ -88,16 +88,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="最多上传4张图片，系统默认首张做活动封面图" />
+                android:text="最多上传7张图片，系统默认首张做活动封面图" />
+            <RelativeLayout
+                android:id="@+id/camera"
+                android:layout_width="fill_parent"
+                android:layout_height="190dp"
+                android:background="@color/white"
+                android:orientation="horizontal" >
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/icon_addpic_focused" />
+                <GridView
+                    android:id="@+id/noScrollgridview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="190dp"
+                    android:layout_marginLeft="5dp"
+                    android:horizontalSpacing="3dp"
+                    android:numColumns="4"
+                    android:scrollbars="none"
+                    android:layout_margin="10dp"
+                    android:verticalSpacing="5dp" >
+                </GridView>
 
-
+            </RelativeLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,27 +123,46 @@
                 android:layout_marginTop="10dp"
                 android:background="#d5d5d5" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="选择活动开始时间" />
 
-            <EditText
+
+            <RelativeLayout
+                android:id="@+id/rl_start_time"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/qq_edit_login" />
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/tv_t"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="选择时间:" />
+                <TextView
+                    android:id="@+id/tv_start_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/tv_t"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrow_green_right" />
+
+            </RelativeLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:text="结束时间*"
+                android:text="结束时间"
                 android:textSize="18sp" />
 
             <View
@@ -141,20 +171,38 @@
                 android:layout_marginTop="10dp"
                 android:background="#d5d5d5" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="选择活动结束时间（可选）" />
 
-            <EditText
+            <RelativeLayout
+                android:id="@+id/rl_end_time"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/qq_edit_login" />
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/tv_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="选择时间（可选）" />
+
+                <TextView
+                    android:id="@+id/tv_end_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_end"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrow_green_right" />
+
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -247,12 +295,12 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
                 android:background="@drawable/btn_zc_bg"
+                android:gravity="center"
                 android:text="提交" />
 
         </LinearLayout>
