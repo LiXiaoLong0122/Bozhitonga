@@ -16,7 +16,7 @@ import com.example.bozhitong.R;
 
  * nihao智慧门禁fdggdsd，，，，，，，，，，，，，，，
  * 从v哈个快快快看过asdasdas
- * @author 12306rthsrthyrthrthjtujrthahhahahhahah哈哈哈ZHPON中姑引吭高歌广告费和 
+ * @author 12306rthsrthyrthrthjtujrthahhahahhahah哈哈哈ZHPON中姑引吭高歌广告费和
  * 
  */
 public class AccessControl extends Activity implements OnClickListener {

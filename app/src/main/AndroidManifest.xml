@@ -77,7 +77,9 @@
         <!-- 特惠拼团界面 -->
         <activity android:name=".activity.FightGroups" />
         <!-- 登录界面 -->
-        <activity android:name=".activity.LoginActivity">
+        <activity android:name=".activity.LoginActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

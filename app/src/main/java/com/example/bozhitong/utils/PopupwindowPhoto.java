@@ -33,6 +33,11 @@ public class PopupwindowPhoto {
         this.mActivity = mActivity;
         this.mf = mf;
     }
+    public PopupwindowPhoto(Activity mActivity) {
+        this.mActivity = mActivity;
+
+    }
+
 
     public void showpopPhotoAtLocation( int gravity, int x, int y) {
 
@@ -104,7 +109,11 @@ public class PopupwindowPhoto {
 
     public void photo() {
         Intent openCameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        mf.startActivityForResult(openCameraIntent, ContentValuse.TAKE_PICTURE);
+        if (mf != null) {
+            mf.startActivityForResult(openCameraIntent, ContentValuse.TAKE_PICTURE);
+        }else {
+            mActivity.startActivityForResult(openCameraIntent, ContentValuse.TAKE_PICTURE);
+        }
     }
 
 
