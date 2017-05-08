@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">天渊智家</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 主界面所用到的string字符串 -->
+    <string name="Binding_cell">高科尚都摩卡</string>
+    <string name="Cloudy">多云</string>
+    <string name="temperature">15℃</string>
+    <string name="Wind_power_rating">2级</string>
+    <string name="Humidity_level">45%</string>
+    <string name="Intelligent_access_control">平安社区</string>
+    <string name="Intelligent_access_string">更便捷，更安全的智慧生活</string>
+    <!-- 管家界面用到的string字符串 -->
+    <string name="Property_introduction">物业简介</string>
+    <string name="Online_Service">在线客服</string>
+    <string name="Quick_repair">快捷保修</string>
+    <string name="Residential_Bulletin">小区公告</string>
+    <string name="Property_payment">物业缴费</string>
+    <string name="Complaints_suggestions">投诉建议</string>
+    <string name="Community_research">调研问卷</string>
+    <string name="Service_guide">办事指南</string>
+    <string name="Common_query">常用查询</string>
+    <string name="Home_reservation">家政预约</string>
+    <string name="Housing_rental">房屋租售</string>
+
+    <!-- 对话框 -->
+    <string name="title_alert">提示信息</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取  消</string>
+
+    <!-- 添加房屋信息 -->
+    <string name="add_housing">添加房屋信息</string>
+    <string name="Select_address">选择地址</string>
+    <string name="region">区域</string>
+    <string name="address">地址</string>
+    <string name="Identity_information">完善您的身份信息</string>
+    <string name="Owner">我是业主</string>
+    <string name="Tenant">我是租客</string>
+    <string name="Owneramppos_family">我是业主家属</string>
+    <string name="Your_name">您的姓名</string>
+    <string name="Please_real_name">请填写您的真实姓名</string>
+    <string name="Submit_audit">提交审核</string>
+    <!-- 房屋租售 -->
+    <string name="House_rent">房屋租售</string>
+    <string name="Rental">出租</string>
+    <string name="Sell">出售</string>
+    <string name="Release_for_sale">发布消息</string>
+
+    <!-- 上拉加载更多下拉刷新 -->
+    <string name="pull_to_refresh">下拉可以刷新</string>
+    <string name="release_to_refresh">松开可以刷新</string>
+    <string name="lastUpdateTime">最近更新：%s</string>
+    <string name="load_full">已加载全部</string>
+    <string name="no_data">暂无数据</string>
+    <string name="more">加载中</string>
+
+    <!-- 小区公告所用到的字符串 -->
+
+    <!-- 家政预约所用到的字符串 -->
+    <string name="demand">如有必要，您可在此注明服务的相关要求</string>
+
+    <!-- 业主报修所用到的字符串 -->
+    <string name="Owners_repair">业主报修</string>
+    <string name="Private_residence">私人住宅</string>
+    <string name="Communal_facilities">公共设施</string>
+    <string name="Public_areas">公共区域</string>
+    <string name="Problem_statement">请简明叙述下问题吧？</string>
+    <string name="Please_select_repair">请选择报修地址</string>
+    <string name="Expected_time_to_come">期望上门时间</string>
+    <string name="Please_phone_number">请输入您的手机号</string>
+    <string name="Confirm_repair">确认报修</string>
+    <!-- 投诉建议界面 -->
+    <string name="Complaint">投诉</string>
+    <string name="proposal">建议</string>
+    <string name="Consultation">咨询</string>
+    <string name="type">类型：</string>
+    <string name="Confirm_submission">确认提交</string>
+
+    <!-- 消除警告，可忽略 -->
+    <string name="d">图片描述</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <!-- 二维码 -->
+    <string name="menu_settings">Settings</string>
+    <string name="scan_text"></string><!--请对准二维码扫一扫！-->
+    <string name="title_activity_result">ResultActivity</string>
+    <!-- 图片浏览 -->
+    <string name="only_choose_num">超出可选图片张数</string>
+    <string name="finish">完成</string>
+    <string name="invalidSD">sdcard无效或没有插入！</string>
+    <string name="photo">选择相册</string>
+    <string name="album">相册</string>
+    <string name="preview">预览</string>
+    <string name="unfinished">完成</string>
+    <string name="camera_cancel">取消</string>
+    <string name="no_photo">相册没有图片</string>
+
+
+    <!--认证-->
+
+    <string name="certification">您无法使用报修，可能原因有：1 您尚未绑定业主信息，2 默认业主尚未通过认证。</string>
+
+    <!-- 版本更新 -->
+    <string name="soft_update_no">已经是最新版本</string>
+    <string name="soft_update_title">软件更新</string>
+    <string name="soft_update_info">检测到新版本，立即更新吗</string>
+    <string name="soft_update_updatebtn">更新</string>
+    <string name="soft_update_later">稍后更新</string>
+    <string name="soft_updating">正在更新</string>
+    <string name="soft_update_cancel">取消更新</string>
+    <string name="title_activity_shopping">Shopping</string>
+    <string name="title_activity_myattention">Myattention</string>
+    <string name="title_activity_attention_my">AttentionMy</string>
+    <string name="title_activity_private_letter">PrivateLetter</string>
+    <string name="title_activity_signature">Signature</string>
+    <string name="title_activity_releasetopic">Releasetopic</string>
+    <string name="title_activity_participateinthesubject">Participateinthesubject</string>
+    <string name="title_activity_collecttopic">Collecttopic</string>
+    <string name="title_activity_no_releasetopic">NoReleasetopic</string>
+    <string name="title_activity_blacklist">Blacklist</string>
+    <string name="title_activity_set">Set</string>
+    <string name="title_activity_share">ShareActivity</string>
+    <string name="title_activity_we">WeActivity</string>
+    <string name="title_activity_couple_back">CoupleBackActivity</string>
+    <string name="proption_info" formatted="false">\u3000\u3000西安高科物业管理有限责任公司隶属于西安市高新技术产业开发区西安高科(集团)公司，1996年开始涉足物业管理行业，国家物业管理一级资质，中国物业管理协会会员单位、陕西省物业管理协会副会长单位，西安市物业管理协会常务理事单位，1998年在西北地区物业管理行业中率先通过ISO9002国际质量体系认证，西安市服务业名牌产品企业。\n\u3000\u3000经过十余年的不断发展，高科物业现已逐渐成为以物业管理为主，以物业租赁、物业经营、装饰装修、家政服务、社区服务等相关行业为辅的现代企业；企业从业人员近千人，管理面积200多万平米，管理项目涵盖别墅、高端住宅、普通住宅、写字楼、商业地产等多种业态，企业荣获陕西省物业管理改革发展30周年“行业贡献奖”； 公司所服务多个住宅及写字楼项目先后被国家住房和城乡建设部评为“全国物业管理示范住宅小区”及 “全国物业管理示范大厦”称号等、“西安市文明小区”、“园林式居住区”、“西安市十佳品牌物业管理企业”及“西安金牌物业”等荣誉称号；被陕西省西安市人民政府授予“西安服务业名牌产品”称号，2015年公司通过了ISO14000环境管理体系认证、ISO18000职业健康安全管理体系认证工作，在西安乃至西北地区同行业当中获得了高度的认可和口碑。\n\u3000\u3000 高科物业始终恪守“业主至上、服务至诚、安全文明、舒适满意”的服务理念，以“时尚、现代、规范”的服务品质和“严谨、细致、务实、高效”的工作作风，持续提升自身核心竞争力，走标准化、规范化道路，狠抓服务质量，不断扩展和延伸服务内容，培养人才梯队，加强团队凝聚力和创新力，实现企业的跨越式发展。</string>
+    <string name="title_activity_search">Search</string>
+    <string name="title_activity_message">Message</string>
+    <string name="title_activity_like">Like</string>
+    <string name="title_activity_apply">Apply</string>
+    <string name="title_activity_myneighbor">Myneighbor</string>
+    <string name="title_activity_release">Release</string>
+    <string name="title_activity_actwildly">Actwildly</string>
+    <string name="title_activity_secondhand">Secondhand</string>
+    <string name="title_activity_help_my">HelpMyActivity</string>
+    <string name="title_activity_emergencycalling">Emergencycalling</string>
+    <string name="title_activity_eagertoinform">Eagertoinform</string>
+    <string name="title_activity_transferofidle">Transferofidle</string>
+    <string name="title_activity_packaway">Packaway</string>
+    <string name="title_activity_asktobuy">Asktobuy</string>
+    <string name="title_activity_publish">Publish</string>
+    <string name="title_activity_newconstruction">Newconstruction</string>
+    <string name="title_activity_family">Family</string>
+    <string name="title_activity_specieslist">SpeciesList</string>
+    <string name="title_activity_tasksdetaile">TasksDetaile</string>
+    <string name="title_activity_integralwithdrawal">IntegralWithdrawal</string>
+    <string name="title_activity_integralexchange">IntegralExchange</string>
+    <string name="title_activity_myoffline">Myoffline</string>
+    <string name="title_activity_integraldetails">IntegralDetails</string>
+    <string name="title_activity_topicdetailed">TopicDetailed</string>
+    <string name="title_activity_actwildlytwo">ActwildlyTwo</string>
+    <string name="title_activity_nocertificationpop">NoCertificationPop</string>
+    <string name="title_activity_myhousing">MyHousing</string>
+    <string name="title_activity_paycost">PayCost</string>
+    <string name="title_activity_addfamily">AddFamily</string>
+</resources>

@@ -1,0 +1,161 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="WoZhuaRBTheme">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">#fff</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@drawable/rb_text_bg</item>
+    </style>
+
+    <style name="text_18_ffffff">
+        <item name="android:textSize">18.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+
+    <style name="text_16_666666">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:textColor">#ff666666</item>
+    </style>
+
+    <style name="sdw_white">
+        <item name="android:shadowColor">#7fffffff</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.65</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+
+    <style name="sdw_79351b">
+        <item name="android:shadowColor">#ff79351b</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+
+    <style name="text_15_ffffff_sdw" parent="@style/sdw_79351b">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+
+    <style name="text_15_666666_sdw" parent="@style/sdw_white">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">#ff666666</item>
+    </style>
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <!-- 上拉加载更多和下拉刷新样式 -->
+    <style name="customProgressBar" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/custom_progress_bar</item>
+        <item name="android:layout_width">21dip</item>
+        <item name="android:layout_height">21dip</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <!-- 9张的相册 -->
+    <style name="PopupAnimation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/activity_translate_in</item>
+        <item name="android:windowExitAnimation">@anim/activity_translate_out</item>
+    </style>
+
+    <style name="PopupAnimation1" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/popup_exit</item>
+    </style>
+
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <!-- 支付对话框 -->
+    <style name="PoppupAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+
+
+
+
+
+
+
+
+    <!-- 设置里的 -->
+    <style name = "MymessageTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:background">@drawable/p_weite_message</item>
+    </style>
+    <style name = "MySetdugeTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name = "MySetTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">195dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:background">@drawable/p_weite_message</item>
+    </style>
+
+
+
+    <!-- 弹出式Activity -->
+    <style name="Theme.FloatActivity" parent="android:style/Theme.Dialog">
+        <!-- 设置背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 设置边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 设置是否背景模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 设置半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 设置无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置全屏 -->
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <!-- 定义一个样式，继承android系统的对话框样式 android:style/Theme.Dialog-->
+    <style name="Theme.FloatActivitya" parent="android:style/Theme.Dialog">
+        <!-- float_box为我们定义的窗口背景-->
+        <item name="android:windowBackground">@drawable/a</item>
+    </style>
+
+
+
+
+
+    <!-- 第二个相册Circle，transparentFrameWindowStyle ，main_menu_animstyle-->
+    <!-- dialog背景样式 -->
+    <style name="transparentFrameWindowStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/photo_choose_bg</item>
+    </style>
+    <!-- 动画样式 -->
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
+
+    </style>
+
+
+
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/pop_push_up_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_push_down_out</item>
+    </style>
+
+
+</resources>

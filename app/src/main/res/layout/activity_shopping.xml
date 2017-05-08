@@ -1,0 +1,172 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bozhitong.Shopping" >
+<!-- 头部布局 -->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#8cac34"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        <ImageView
+            android:id="@+id/img_back"
+           android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/left_arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.5" >
+
+            <EditText
+                android:id="@+id/key_word_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="7sp"
+                android:background="@drawable/c"
+                android:gravity="center_vertical"
+                android:hint="请输入类别或关键字"
+                android:padding="4dp"
+                android:textColor="#000000"
+                android:textSize="15sp" /> 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/key_word_search_btn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/s_b" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" >
+
+            <ImageView
+                android:id="@+id/key_word"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/add_center_bg_b" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 头部结束 -->
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/ll"
+        android:background="#E1E1E1" />
+ <RadioGroup
+         android:id="@+id/rg_group"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:layout_below="@+id/view"
+         android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tv_Defaultsort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="默认排序"
+            android:button="@null"
+            android:checked="true"
+            android:textColor="@drawable/btn_selected_bg" />
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+        
+        <RadioButton
+            android:id="@+id/tv_Salesispreferred"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="销量优先"
+            android:button="@null"
+           android:textColor="@drawable/btn_selected_bg"/>
+        
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+        
+        <RadioButton
+            android:id="@+id/tv_commodityprice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="商品价格"
+            android:button="@null"
+            android:textColor="@drawable/btn_selected_bg" />
+
+        
+    </RadioGroup>
+      <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+         android:layout_below="@+id/rg_group"
+        android:background="#E1E1E1" />
+    <LinearLayout
+        android:id="@+id/Liner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/view2"
+         >
+    
+    <Button
+        android:id="@+id/but_xian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8dc34a"
+         />
+</LinearLayout>
+  <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Liner"
+        android:background="#EEEEF4" />  
+</RelativeLayout>
+        
+

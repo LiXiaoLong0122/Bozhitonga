@@ -1,0 +1,268 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bozhitong.MainActivity" >
+<!--  <RelativeLayout
+        android:id="@+id/Rl_release"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_main_tab_user_center_pressed" />
+
+        <TextView
+            android:id="@+id/tv_release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView1"
+            android:textSize="16sp"
+            android:text="发布" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_main_tab_user_center_pressed" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18dp"
+            android:layout_toLeftOf="@+id/imageView2"
+            android:src="@drawable/ic_main_tab_user_center_pressed" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/imageView3"
+            android:src="@drawable/ic_main_tab_user_center_pressed" />
+
+    </RelativeLayout> -->
+    
+ 
+ <!-- 头部布局 -->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#8cac34"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal" >
+
+              <LinearLayout
+                  android:id="@+id/ll_left"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_marginRight="5dp"
+                  android:layout_weight="0.5"
+                  android:visibility="gone"
+                  >
+
+                  <ImageView
+                      android:id="@+id/img_left"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_gravity="center"
+                      android:src="@drawable/left_arrow" />
+              </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_release"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+        <ImageView
+            android:id="@+id/img_back"
+           android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bj" />
+        
+                <TextView
+            android:id="@+id/tv_release"
+           android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"
+             android:textColor="#ffffff"
+           android:text="发布"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_key_word_search_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/key_word_search_btn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/s_b" />
+        </LinearLayout>
+     <!--    @drawable/ss -->
+        <LinearLayout
+            android:id="@+id/ll_message"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/img_message"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/lb" />
+          <!--   @drawable/voice -->
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/Apply"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/key_word"
+                 android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/scan" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 头部结束 -->
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/ll"
+        android:background="#E1E1E1" />
+       <RadioGroup
+         android:id="@+id/rg_group"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:layout_below="@+id/view"
+         android:background="#89ffffff"
+         android:orientation="horizontal">
+<!-- android:background="#FF69B4" -->
+        <RadioButton
+            android:id="@+id/tv_tasks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="社区活动"
+            android:button="@null"
+            android:checked="true"
+            android:textColor="@drawable/btn_selected_bg" />
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+        
+        <!-- <RadioButton
+            android:id="@+id/tv_review"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="闲置"
+            android:button="@null"
+           android:textColor="@drawable/btn_selected_bg"/>
+        
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" /> -->
+        
+        <RadioButton
+            android:id="@+id/tv_scheduling"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="邻里互动"
+            android:button="@null"
+            android:textColor="@drawable/btn_selected_bg" />
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+        
+        <RadioButton
+            android:id="@+id/tv_work"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="随便说说"
+            android:button="@null"
+           android:textColor="@drawable/btn_selected_bg"/>
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+        
+<!--         <RadioButton
+            android:id="@+id/tv_stocks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:button="@null"
+           android:textColor="@drawable/btn_selected_bg"/> -->
+
+        
+    </RadioGroup>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/rg_group"
+        android:background="#EEEEF4" />
+</RelativeLayout>

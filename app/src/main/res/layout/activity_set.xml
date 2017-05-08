@@ -1,0 +1,283 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.example.bozhitong.Set" >
+
+<!--     <RelativeLayout
+        android:id="@+id/rl_0001"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff" >
+
+        <ImageView
+            android:id="@+id/imge_set_retreat"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_jiantou" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imge_set_retreat"
+            android:layout_centerHorizontal="true"
+            android:text="设置"
+            android:textSize="20sp" />
+    </RelativeLayout> -->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <RelativeLayout
+        android:id="@+id/rl_0001"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+         android:background="#8cac34"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/imge_set_retreat"
+           android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+             android:layout_marginLeft="10dp"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="系统设置"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+       <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rl_0001"
+        android:background="#d5d5d5" />
+    <RelativeLayout
+        android:id="@+id/rl_set_find"
+        style="@style/MymessageTheme"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/view"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:textSize="16sp"
+            android:text="修改密码" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_arrow_right_gray" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        style="@style/MySetTheme"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_alignLeft="@+id/rl_set_find"
+        android:layout_alignRight="@+id/rl_set_find"
+        android:layout_below="@+id/rl_set_find"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rl_set_idea"
+            style="@style/MySetdugeTheme" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                 android:textSize="16sp"
+                android:text="意见反馈" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_arrow_right_gray" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#88000000" />
+
+        <RelativeLayout
+            android:id="@+id/rl_set_service"
+            style="@style/MySetdugeTheme" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                 android:textSize="16sp"
+                android:text="联系客服" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_arrow_right_gray" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#88000000" />
+
+        <RelativeLayout
+            android:id="@+id/rl_set_my"
+            style="@style/MySetdugeTheme" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                 android:textSize="16sp"
+                android:text="关于我们" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_arrow_right_gray" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#88000000" />
+
+        <RelativeLayout
+            android:id="@+id/rl_set_share"
+            android:visibility="gone"
+            style="@style/MySetdugeTheme" >
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                 android:textSize="16sp"
+                android:text="分享" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_arrow_right_gray" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_set_version"
+        style="@style/MymessageTheme"
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_alignRight="@+id/linearLayout1"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="16dp" >
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+             android:textSize="16sp"
+            android:text="检测新版本" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView7"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:text="当前版本：2.2.0" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_set_out"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignLeft="@+id/rl_set_version"
+        android:layout_alignRight="@+id/rl_set_version"
+        android:layout_below="@+id/rl_set_version"
+        android:background="@drawable/p_weite_set"
+        android:layout_marginTop="40dp"
+        android:textColor="#ffffff"
+        android:text="退出当前帐号" />
+
+</RelativeLayout>

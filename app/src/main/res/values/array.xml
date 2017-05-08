@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="languages">
+        <item>请选择</item>
+        <item>东</item>
+        <item>西</item>
+        <item>南</item>
+        <item>北</item>
+        <item>东北</item>
+        <item>东南</item>
+        <item>西北</item>
+        <item>西南</item>
+    </string-array>
+    <string-array name="renovations">
+        <item>请选择</item>
+        <item>精装修</item>
+        <item>中等装修</item>
+        <item>豪装修</item>
+    </string-array>
+    <string-array name="type_service">
+        <item>育婴师</item>
+        <item>月嫂</item>
+        <item>医院护工</item>
+        <item>开荒清洁工</item>
+        <item>临时钟点工</item>
+        <item>老人护理</item>
+        <item>煮饭工中+晚餐</item>
+        <item>煮饭工晚餐</item>
+        <item>煮饭工中餐</item>
+
+    </string-array>
+    <string-array name="type_complaints">
+        <item>服务</item>
+        <item>客服</item>
+        <item>噪音</item>
+        <item>物业</item>
+        <item>维修</item>
+        <item>安全</item>
+        <item>安保</item>
+        <item>其他</item>
+
+    </string-array>
+    <string-array name="add_family_relation">
+        <item>父亲</item>
+        <item>母亲</item>
+        <item>哥哥</item>
+        <item>弟弟</item>
+        <item>姐姐</item>
+        <item>妹妹</item>
+        <item>儿子</item>
+        <item>女儿</item>
+
+    </string-array>
+</resources>

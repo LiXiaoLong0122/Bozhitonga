@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bozhitong.MainActivity" >
+
+    <!--
+    <LinearLayout
+        android:id="@+id/ll_fragment_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_fragment_main"
+        android:background="#EEEEF4"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+    -->
+    <!--
+    <FrameLayout
+        android:id="@+id/ll_fragment_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_fragment_main"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+         > 
+
+    </FrameLayout>
+    -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ll_fragment_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rg_fragment_main"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="#EEEEF4" />
+
+    <ImageView
+        android:id="@+id/im_white_center_add_main"
+        android:layout_width="78dp"
+        android:layout_height="77dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0.5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/cycle_white_bg_3" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/ll_fragment_main"
+        android:background="#d6d6d6" />
+
+    <RadioGroup
+        android:id="@+id/rg_fragment_main"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="1dp" >
+
+        <RadioButton
+            android:id="@+id/rb_home_fragment"
+            style="@style/WoZhuaRBTheme"
+            android:checked="true"
+            android:drawableTop="@drawable/rb_home_bg"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/rb_circle_fragment"
+            style="@style/WoZhuaRBTheme"
+            android:drawableTop="@drawable/rb_cicle_bg"
+            android:text="管家" />
+
+        <RadioButton
+            android:id="@+id/rb_center_fragment"
+            style="@style/WoZhuaRBTheme" />
+
+        <RadioButton
+            android:id="@+id/rb_message_fragment"
+            style="@style/WoZhuaRBTheme"
+            android:drawableTop="@drawable/rb_message_bg"
+            android:text="邻里" />
+
+        <RadioButton
+            android:id="@+id/rb_my_fragment"
+            style="@style/WoZhuaRBTheme"
+            android:drawableTop="@drawable/rb_discover_bg"
+            android:text="我的" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/im_center_add_main"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/add_center_bg_b" />
+
+</RelativeLayout>

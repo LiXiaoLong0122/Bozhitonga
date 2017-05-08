@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_my_housing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.bozhitong.activity.MyHousingActivity">
+
+    <include layout="@layout/layout_title" />
+
+    <com.example.bozhitong.dialog.view.AutoListView
+        android:id="@+id/lv_myhousing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+
+    </com.example.bozhitong.dialog.view.AutoListView>
+
+    <Button
+        android:id="@+id/but_addhouse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn_zc_bg"
+        android:text="+添加房屋信息"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bozhitong">
+
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 拨打电话权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/log"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" />
+        <!-- 添加房屋Activity -->
+        <activity android:name=".activity.AddHousingInformation" />
+        <!-- 房屋出租 -->
+        <activity android:name=".activity.HousingRentalActivity" />
+        <!-- 小区公告 -->
+        <activity android:name=".activity.ResidentialBulletin" />
+        <!-- 快捷报修 -->
+        <activity android:name=".activity.ExpressWarranty" />
+        <!-- 投诉建议 -->
+        <activity android:name=".activity.ComplaintAndAdvocacy" />
+        <!-- 物业缴费 -->
+        <activity android:name=".activity.PropertyPayment" />
+        <!-- 发布房屋出租信息 -->
+        <activity android:name=".activity.RelHousingRental" />
+        <!-- 家政预约 -->
+        <activity android:name=".activity.HomeReservation" />
+        <!-- 办事指南 -->
+        <activity android:name=".activity.ServiceGuideActivity" />
+        <!-- 常用查询 -->
+        <activity android:name=".activity.CommonQuery" />
+        <!-- 在线客服 -->
+        <activity android:name=".activity.OnlineService" />
+        <!-- 小区调研 -->
+        <activity android:name=".activity.CommunityResearch" />
+        <!-- 物业介绍 -->
+        <activity android:name=".activity.PropertyDescription" />
+        <!-- 智慧门禁 -->
+        <activity android:name=".activity.AccessControl" />
+        <!-- 智慧门禁子界面 -->
+        <activity android:name=".activity.AccessItemControl" />
+        <!-- 语音下单 -->
+        <activity android:name=".activity.VoiceOrder" />
+        <!-- 周边 -->
+        <activity android:name=".activity.Periphery" />
+        <!-- 小区调研 -->
+        <activity android:name=".activity.Housekeeper" />
+        <!-- 房屋租售详情 -->
+        <activity android:name=".activity.HousingRentalDetails" />
+        <!-- 修改密码 -->
+        <activity android:name=".activity.FindActivity" />
+        <!-- 注册界面 -->
+        <activity android:name=".activity.RegisterActivity" />
+        <!-- 商超界面 -->
+        <activity android:name=".activity.Supermarket" />
+        <!-- 智能家居界面 -->
+        <activity android:name=".activity.Smarthome" />
+        <!-- 公共监控界面 -->
+        <activity android:name=".activity.MonitorActivity" />
+        <!-- 特惠拼团界面 -->
+        <activity android:name=".activity.FightGroups" />
+        <!-- 登录界面 -->
+        <activity android:name=".activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+     <!--   <activity
+            android:name=".ProfileFragment"
+            android:label="@string/title_activity_profile" />-->
+        <activity
+            android:name=".activity.SpeciesListActivity"
+            android:label="title_activity_specieslist" />
+        <!-- 二维码 -->
+        <activity
+            android:name=".MipcaActivityCapture"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ResultActivity"
+            android:label="@string/title_activity_result" />
+        <!-- 相册 -->
+        <activity
+            android:name=".AlbumActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ImageFile" />
+        <activity android:name=".ShowAllPhoto" />
+        <activity android:name=".GalleryActivity" />
+        <activity android:name=".Profile" />
+    <!--    <activity android:name=".Unauthorized" />-->
+        <activity android:name=".Regularmembers" />
+        <activity android:name=".Integral" />
+        <activity android:name=".Coupons" />
+        <activity android:name=".Goodscollection" />
+        <activity android:name=".Records" />
+        <activity android:name=".Complaintrecord" />
+    <!--    <activity android:name=".Complain" />-->
+        <activity android:name=".Pay" />
+        <activity android:name=".Research" />
+        <activity android:name=".Rental" />
+        <activity android:name=".House" />
+        <activity android:name=".Order" />
+        <activity android:name=".Circle" />
+        <activity android:name=".Nickname" />
+        <activity android:name=".Name" />
+   <!--     <activity android:name=".Gender" />
+        <activity android:name=".Birthday" />-->
+        <activity android:name=".Phonenumber" />
+    <!--    <activity android:name=".Housinginformation" />-->
+        <activity android:name=".Shippingaddress" />
+   <!--     <activity android:name=".Housekeeper" />-->
+        <activity
+            android:name=".Shopping"
+            android:label="@string/title_activity_shopping" />
+        <activity
+            android:name=".Myattention"
+            android:label="@string/title_activity_myattention" />
+        <activity
+            android:name=".AttentionMy"
+            android:label="@string/title_activity_attention_my" />
+        <activity
+            android:name=".PrivateLetter"
+            android:label="@string/title_activity_private_letter" />
+        <activity
+            android:name=".Signature"
+            android:label="@string/title_activity_signature" />
+        <activity
+            android:name=".Releasetopic"
+            android:label="@string/title_activity_releasetopic" />
+        <activity
+            android:name=".Participateinthesubject"
+            android:label="@string/title_activity_participateinthesubject" />
+        <activity
+            android:name=".Collecttopic"
+            android:label="@string/title_activity_collecttopic" />
+        <activity
+            android:name=".NoReleasetopic"
+            android:label="@string/title_activity_no_releasetopic" />
+        <activity
+            android:name=".Blacklist"
+            android:label="@string/title_activity_blacklist" />
+        <activity
+            android:name=".Set"
+            android:label="@string/title_activity_set" />
+        <activity
+            android:name=".ShareActivity"
+            android:label="@string/title_activity_share"
+            android:theme="@style/Theme.FloatActivity" />
+        <activity
+            android:name=".WeActivity"
+            android:label="@string/title_activity_we" />
+        <activity
+            android:name=".CoupleBackActivity"
+            android:label="@string/title_activity_couple_back" />
+        <activity
+            android:name=".Search"
+            android:label="@string/title_activity_search" />
+        <activity
+            android:name=".Message"
+            android:label="@string/title_activity_message" />
+        <activity
+            android:name=".Like"
+            android:label="@string/title_activity_like" />
+        <activity
+            android:name=".Apply"
+            android:label="@string/title_activity_apply"
+            android:theme="@style/Theme.FloatActivity" />
+        <activity
+            android:name=".Myneighbor"
+            android:label="@string/title_activity_myneighbor" />
+        <activity
+            android:name=".Release"
+            android:label="@string/title_activity_release"
+            android:theme="@style/Theme.FloatActivity" />
+        <activity
+            android:name=".Actwildly"
+            android:label="@string/title_activity_actwildly" />
+        <activity
+            android:name=".Secondhand"
+            android:label="@string/title_activity_secondhand" />
+        <activity
+            android:name=".HelpMyActivity"
+            android:label="@string/title_activity_help_my" />
+        <activity
+            android:name=".Emergencycalling"
+            android:label="@string/title_activity_emergencycalling" />
+        <activity
+            android:name=".Eagertoinform"
+            android:label="@string/title_activity_eagertoinform" />
+        <activity
+            android:name=".Transferofidle"
+            android:label="@string/title_activity_transferofidle" />
+        <activity
+            android:name=".Packaway"
+            android:label="@string/title_activity_packaway" />
+        <activity
+            android:name=".Asktobuy"
+            android:label="@string/title_activity_asktobuy" />
+        <activity
+            android:name=".Publishes"
+            android:label="@string/title_activity_publish" />
+        <activity
+            android:name=".Newconstruction"
+            android:label="@string/title_activity_newconstruction" />
+        <activity
+            android:name=".Family"
+            android:label="@string/title_activity_family" />
+
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+<!--        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />-->
+        <!-- 话题详情 -->
+        <activity
+            android:name=".activity.TopicDetailedActivity"
+            android:label="title_activity_topicdetailed"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <!-- 积分提现 -->
+        <activity
+            android:name=".IntegralWithdrawalActivity"
+            android:label="title_activity_integralwithdrawal" />
+        <!-- 积分兑换 -->
+        <activity
+            android:name=".IntegralExchangeActivity"
+            android:label="title_activity_integralexchange" />
+        <!-- 我的下线 -->
+        <activity
+            android:name=".MyofflineActivity"
+            android:label="title_activity_myoffline" />
+        <!-- 收入明细 -->
+        <activity
+            android:name=".IntegralDetailsActivity"
+            android:label="title_activity_integraldetails" />
+        <!-- 话题详情 -->
+        <activity
+            android:name=".activity.TaskDetailedActivity"
+            android:label="title_activity_tasksdetaile" />
+        <activity
+            android:name=".ActwildlyTwoActivity"
+            android:label="@string/title_activity_actwildlytwo" />
+        <!-- 未通过认证弹窗 -->
+        <activity
+            android:name=".NoCertificationPopActivity"
+            android:label="@string/title_activity_nocertificationpop"
+            android:theme="@style/Theme.FloatActivity" />
+        <!-- 我的房屋信息 -->
+        <activity
+            android:name=".activity.MyHousingActivity"
+            android:label="@string/title_activity_myhousing" />
+        <!-- 缴费 -->
+        <activity
+            android:name=".activity.PayCostActivity"
+            android:label="@string/title_activity_paycost" />
+        <!-- 添加家人信息 -->
+        <activity
+            android:name=".AddFamilyActivity"
+            android:label="@string/title_activity_addfamily"></activity>
+    </application>
+
+
+
+</manifest>

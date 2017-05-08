@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bozhitong.ShareActivity" >
+
+    <Button
+        android:id="@+id/btn_share_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/p_weite_pwd"
+        android:text="取消" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_above="@+id/btn_share_cancel"
+        android:layout_alignLeft="@+id/btn_share_cancel"
+        android:layout_alignRight="@+id/btn_share_cancel"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/p_weite_pwd" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:textSize="18dp"
+            android:text="分享到" />
+
+        <View
+            android:id="@+id/vw_01"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/textView1"
+            android:layout_marginTop="16dp"
+            android:background="#55000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/vw_01" >
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:layout_height="match_parent"
+               android:padding="10dp"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_share_wechat"
+                android:textColor="#6699ff"
+                android:text="微信"/>
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:padding="10dp"
+                 android:drawableTop="@drawable/ic_share_wechat_circle"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#6699ff"
+                android:text="朋友圈"/>
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:padding="10dp"
+                 android:drawableTop="@drawable/ic_share_qq"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#6699ff"
+                android:text="QQ"/>
+
+        </LinearLayout>
+        
+    </RelativeLayout>
+
+</RelativeLayout>

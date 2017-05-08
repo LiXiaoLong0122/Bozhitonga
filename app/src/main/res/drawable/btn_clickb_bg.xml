@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!--选中未选中 -->
+<!-- <item android:drawable="@drawable/p_click_bg_on"
+    android:state_checked="true"/>
+<item android:drawable="@drawable/p_click_bg_off"
+    android:state_checked="false"/> 
+     -->
+    <!-- 点击未点击 -->
+    <item android:drawable="@drawable/p_click_bg_onnf"
+        android:state_pressed="false"/>
+    <item android:drawable="@drawable/p_click_bg_offn"
+        android:state_pressed="true"/> 
+</selector>

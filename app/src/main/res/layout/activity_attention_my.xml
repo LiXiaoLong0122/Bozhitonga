@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bozhitong.AttentionMy" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#8cac34">
+
+        <ImageView
+            android:id="@+id/img_AttentionMyback"
+           android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+             android:layout_marginLeft="10dp"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="我关注的"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+       <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/relativeLayout1"
+        android:background="#E1E1E1" />
+
+       
+       
+      <!--  -->
+<RadioGroup
+         android:id="@+id/rg_group"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:layout_below="@+id/relativeLayout1"
+         android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tv_AttentionMy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="我的关注"
+            android:button="@null"
+            android:checked="true"
+            android:textColor="@drawable/btn_selected_bg" />
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+        
+        <RadioButton
+            android:id="@+id/tv_FansMy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="我的粉丝"
+            android:button="@null"
+           android:textColor="@drawable/btn_selected_bg"/>
+   
+   
+         </RadioGroup>
+   <LinearLayout
+        android:id="@+id/Liner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rg_group"
+         >
+    
+    <Button
+        android:id="@+id/but_xian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8dc34a"
+         />
+</LinearLayout>
+     <View
+         android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/Liner"
+        android:background="@color/gainsboro" />
+<android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/view1"
+        android:background="#EEEEF4" />
+   
+   
+</RelativeLayout>

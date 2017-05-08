@@ -1,0 +1,641 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bozhitong.Profile" >
+ 
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#8cac34">
+
+        <ImageView
+            android:id="@+id/img_MyProfile"
+           android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+             android:layout_marginLeft="10dp"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="我的资料"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/View0"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+         android:layout_marginTop="15dp"
+        android:layout_below="@+id/relativeLayout1"
+        android:background="@color/gainsboro" />
+    <LinearLayout
+        android:id="@+id/Head"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/View0"
+        android:background="@drawable/btn_clickb_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_marginLeft="10dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/touxiang" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="我的头像"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right" >
+
+           <com.example.bozhitong.view.RoundImageView
+               android:id="@+id/iv_head"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/tx" />
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="center_vertical"
+                 android:layout_marginRight="10dip"
+                android:background="@drawable/arrow_green_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/Head"
+        android:background="@color/gainsboro" />
+    
+        <LinearLayout
+        android:id="@+id/nickname"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/View"
+        android:background="@drawable/btn_clickb_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_marginLeft="10dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/nic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="昵称"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right" >
+
+           <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="天边"/>
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="center_vertical"
+                 android:layout_marginRight="10dip"
+                android:background="@drawable/arrow_green_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+   <View
+        android:id="@+id/View2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/nickname"
+        android:background="@color/gainsboro" />
+    
+            <LinearLayout
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/View2"
+        android:background="@drawable/btn_clickb_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_marginLeft="10dip"
+                android:padding="10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/mingz" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="姓名"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="李好"/> 
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="center_vertical"
+                 android:layout_marginRight="10dip"
+                android:background="@drawable/arrow_green_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View3"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/name"
+        android:background="@color/gainsboro" />
+    
+    <LinearLayout
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/View3"
+        android:background="@drawable/btn_clickb_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_marginLeft="10dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/xinb" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="性别"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right" >
+
+           <TextView
+               android:id="@+id/tv_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="保密"/> 
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="center_vertical"
+                 android:layout_marginRight="10dip"
+                android:background="@drawable/arrow_green_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View4"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/gender"
+        android:background="@color/gainsboro" />
+        
+    <LinearLayout
+        android:id="@+id/birthday"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/View4"
+        android:background="@drawable/btn_clickb_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_marginLeft="10dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shengr" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="生日"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right" >
+
+           <TextView
+               android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="2016-12-30"/> 
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="center_vertical"
+                 android:layout_marginRight="10dip"
+                android:background="@drawable/arrow_green_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View5"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/birthday"
+        android:background="@color/gainsboro" />
+    
+    
+        <LinearLayout
+        android:id="@+id/phonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/View5"
+        android:background="@drawable/btn_clickb_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_marginLeft="10dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shouji" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="手机号"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right" >
+
+           <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="15800009999"/> 
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="center_vertical"
+                 android:layout_marginRight="10dip"
+                android:background="@drawable/arrow_green_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View6"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/phonenumber"
+        android:background="@color/gainsboro" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <LinearLayout
+        android:id="@+id/Family"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/View6"
+        android:background="@drawable/btn_clickb_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_marginLeft="10dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/jiaren" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="我的家人"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right" >
+
+      <!--      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="15800009999"/>  -->
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="center_vertical"
+                 android:layout_marginRight="10dip"
+                android:background="@drawable/arrow_green_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View12"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/Family"
+        android:background="@color/gainsboro" />
+    
+      <View
+        android:id="@+id/View9"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+         android:layout_marginTop="20dp"
+        android:layout_below="@+id/View12"
+        android:background="@color/gainsboro" />
+           <LinearLayout
+        android:id="@+id/Housinginformation"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/View9"
+        android:background="@drawable/btn_clickb_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_marginLeft="10dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/fangwu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="房屋信息"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right" >
+
+         <!--   <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="15800009999"/>  -->
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="center_vertical"
+                 android:layout_marginRight="10dip"
+                android:background="@drawable/arrow_green_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View7"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/Housinginformation"
+        android:background="@color/gainsboro" />
+     <LinearLayout
+        android:id="@+id/Shippingaddress"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/View7"
+        android:background="@drawable/btn_clickb_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:layout_marginLeft="10dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/dizhi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="收货地址"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right" >
+
+           <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="管理收货地址"/> 
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="center_vertical"
+                 android:layout_marginRight="10dip"
+                android:background="@drawable/arrow_green_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View8"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/Shippingaddress"
+        android:background="@color/gainsboro" />
+   
+    
+</RelativeLayout>
+
+

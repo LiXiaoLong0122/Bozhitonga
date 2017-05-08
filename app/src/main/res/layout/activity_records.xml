@@ -1,0 +1,250 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bozhitong.ProfileActivity" >
+
+<RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#8cac34"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/img_back"
+           android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+             android:layout_marginLeft="10dp"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="我的报修记录"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+         android:layout_below="@+id/relativeLayout1"
+        android:background="#E1E1E1" />
+    <RadioGroup
+         android:id="@+id/rg_group"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:layout_below="@+id/view"
+         android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tv_backlog"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="待办(17)"
+            android:button="@null"
+            android:checked="true"
+            android:textColor="@drawable/btn_selected_bg" />
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+        
+        <RadioButton
+            android:id="@+id/tv_Dealt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="客服办理中(12)"
+            android:button="@null"
+           android:textColor="@drawable/btn_selected_bg"/>
+        
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+        
+        <RadioButton
+            android:id="@+id/tv_dispatch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="已分派维修工(2)"
+            android:button="@null"
+            android:textColor="@drawable/btn_selected_bg" />
+         <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#E1E1E1" />
+        
+        <RadioButton
+            android:id="@+id/tv_maintenance"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="维修中"
+            android:button="@null"
+            android:textColor="@drawable/btn_selected_bg" />
+
+        
+    </RadioGroup>
+      
+    <LinearLayout
+        android:id="@+id/Liner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rg_group"
+         >
+    
+    <Button
+        android:id="@+id/but_xian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8dc34a"
+         />
+</LinearLayout>
+<View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+         android:layout_below="@+id/Liner"
+        android:background="#E1E1E1" />
+  <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/view2"
+        android:background="#EEEEF4" />  
+</RelativeLayout>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#89ff0000">
+
+        <ImageView
+            android:id="@+id/img_back"
+           android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+             android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_jiantou" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="我的报修记录"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:padding="80dp"
+        android:layout_below="@+id/relativeLayout1"
+        android:src="@drawable/ic_empty" />
+    <TextView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginTop="150dp"
+        android:text="您还没有报修记录"
+        android:src="@drawable/ic_empty" /> -->
