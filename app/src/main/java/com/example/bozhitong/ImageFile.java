@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.example.bozhitong.activity.AdvocacyAndComplaintActivity;
 import com.example.bozhitong.activity.ComplaintAndAdvocacy;
 import com.example.bozhitong.photo.adapter.FolderAdapter;
 import com.example.bozhitong.photo.util.Bimp;
@@ -66,7 +67,7 @@ public class ImageFile extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			Intent intent = new Intent();
-			intent.setClass(mContext, ComplaintAndAdvocacy.class);
+			intent.setClass(mContext, AdvocacyAndComplaintActivity.class);
 			startActivity(intent);
 		}
 

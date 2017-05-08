@@ -13,8 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bozhitong.R;
+import com.example.bozhitong.activity.AdvocacyAndComplaintActivity;
 import com.example.bozhitong.activity.CommonQuery;
-import com.example.bozhitong.activity.ComplaintAndAdvocacy;
+
 import com.example.bozhitong.activity.ExpressWarranty;
 import com.example.bozhitong.activity.HomeReservation;
 import com.example.bozhitong.activity.Housekeeper;
@@ -154,7 +155,7 @@ public class StewardFragment extends Fragment implements OnClickListener {
 			break;
 		case R.id.suggestions_tv:// 投诉建议
 			intent = new Intent();
-			intent.setClass(mContext, ComplaintAndAdvocacy.class);
+			intent.setClass(mContext, AdvocacyAndComplaintActivity.class);
 			startActivity(intent);
 			break;
 		case R.id.ProperPayment_tv:// 物业缴费

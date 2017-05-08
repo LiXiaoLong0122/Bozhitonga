@@ -154,4 +154,5 @@
     <string name="title_activity_myhousing">MyHousing</string>
     <string name="title_activity_paycost">PayCost</string>
     <string name="title_activity_addfamily">AddFamily</string>
+    <string name="title_activity_advocacyandcomplaint">AdvocacyAndComplaint</string>
 </resources>

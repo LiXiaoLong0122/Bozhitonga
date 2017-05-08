@@ -18,6 +18,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
+import com.example.bozhitong.activity.AdvocacyAndComplaintActivity;
 import com.example.bozhitong.activity.ComplaintAndAdvocacy;
 import com.example.bozhitong.photo.util.Bimp;
 import com.example.bozhitong.photo.util.PublicWay;
@@ -164,8 +166,8 @@ public class GalleryActivity extends Activity {
 	private class GallerySendListener implements OnClickListener {
 		public void onClick(View v) {
 			finish();
-			intent.setClass(mContext, ComplaintAndAdvocacy.class);
-			startActivity(intent);
+		/*	intent.setClass(mContext, AdvocacyAndComplaintActivity.class);
+			startActivity(intent);*/
 		}
 
 	}

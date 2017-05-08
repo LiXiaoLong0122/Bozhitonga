@@ -15,8 +15,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.example.bozhitong.activity.ComplaintAndAdvocacy;
-import com.example.bozhitong.fragment.ConsultationFragment;
+
 import com.example.bozhitong.photo.adapter.GridAdapter;
 import com.example.bozhitong.photo.util.Bimp;
 import com.example.bozhitong.photo.util.FileUtils;

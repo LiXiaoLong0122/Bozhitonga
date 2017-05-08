@@ -52,4 +52,12 @@
         <item>女儿</item>
 
     </string-array>
+
+    <string-array name="purpose">
+        <item>投诉</item>
+        <item>建议</item>
+        <item>咨询</item>
+
+    </string-array>
+
 </resources>

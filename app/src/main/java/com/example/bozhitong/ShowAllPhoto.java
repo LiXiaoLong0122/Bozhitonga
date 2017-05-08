@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+
+import com.example.bozhitong.activity.AdvocacyAndComplaintActivity;
 import com.example.bozhitong.activity.ComplaintAndAdvocacy;
 import com.example.bozhitong.photo.adapter.AlbumGridViewAdapter;
 import com.example.bozhitong.photo.util.Bimp;

@@ -8,6 +8,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
 
+
+import com.example.bozhitong.activity.AdvocacyAndComplaintActivity;
+import com.example.bozhitong.activity.ComplaintAndAdvocacy;
 import com.example.bozhitong.fragment.ComplaintFragment;
 
 import java.io.BufferedInputStream;

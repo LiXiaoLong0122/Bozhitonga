@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bozhitong">
 
-
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -15,7 +13,6 @@
     <!-- 拨打电话权限 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
@@ -77,18 +74,20 @@
         <!-- 特惠拼团界面 -->
         <activity android:name=".activity.FightGroups" />
         <!-- 登录界面 -->
-        <activity android:name=".activity.LoginActivity"
-            android:theme="@android:style/Theme.NoTitleBar"
-            >
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/Theme.AppStartLoadTranslucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-     <!--   <activity
+        <!--
+            <activity
             android:name=".ProfileFragment"
-            android:label="@string/title_activity_profile" />-->
+            android:label="@string/title_activity_profile" />
+        -->
         <activity
             android:name=".activity.SpeciesListActivity"
             android:label="title_activity_specieslist" />
@@ -109,14 +108,14 @@
         <activity android:name=".ShowAllPhoto" />
         <activity android:name=".GalleryActivity" />
         <activity android:name=".Profile" />
-    <!--    <activity android:name=".Unauthorized" />-->
+        <!-- <activity android:name=".Unauthorized" /> -->
         <activity android:name=".Regularmembers" />
         <activity android:name=".Integral" />
         <activity android:name=".Coupons" />
         <activity android:name=".Goodscollection" />
         <activity android:name=".Records" />
         <activity android:name=".Complaintrecord" />
-    <!--    <activity android:name=".Complain" />-->
+        <!-- <activity android:name=".Complain" /> -->
         <activity android:name=".Pay" />
         <activity android:name=".Research" />
         <activity android:name=".Rental" />
@@ -125,12 +124,14 @@
         <activity android:name=".Circle" />
         <activity android:name=".Nickname" />
         <activity android:name=".Name" />
-   <!--     <activity android:name=".Gender" />
-        <activity android:name=".Birthday" />-->
+        <!--
+            <activity android:name=".Gender" />
+        <activity android:name=".Birthday" />
+        -->
         <activity android:name=".Phonenumber" />
-    <!--    <activity android:name=".Housinginformation" />-->
+        <!-- <activity android:name=".Housinginformation" /> -->
         <activity android:name=".Shippingaddress" />
-   <!--     <activity android:name=".Housekeeper" />-->
+        <!-- <activity android:name=".Housekeeper" /> -->
         <activity
             android:name=".Shopping"
             android:label="@string/title_activity_shopping" />
@@ -232,9 +233,11 @@
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
         -->
-<!--        <meta-data
+        <!--
+            <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />-->
+            android:value="@integer/google_play_services_version" />
+        -->
         <!-- 话题详情 -->
         <activity
             android:name=".activity.TopicDetailedActivity"
@@ -279,9 +282,11 @@
         <!-- 添加家人信息 -->
         <activity
             android:name=".AddFamilyActivity"
-            android:label="@string/title_activity_addfamily"></activity>
+            android:label="@string/title_activity_addfamily" />
+        <!--投诉与建议-->
+        <activity android:name=".activity.AdvocacyAndComplaintActivity"
+            android:label="@string/title_activity_advocacyandcomplaint"
+            ></activity>
     </application>
-
-
 
 </manifest>
