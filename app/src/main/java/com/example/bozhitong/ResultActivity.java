@@ -50,9 +50,9 @@ public class ResultActivity extends Activity {
 					web = new WebView(ResultActivity.this);
 					web.loadUrl(str);
 					setContentView(web);
-					Toast.makeText(ResultActivity.this, "成......功!", 0).show();
+					Toast.makeText(ResultActivity.this, "成   功!", Toast.LENGTH_SHORT).show();
 				}else{
-					Toast.makeText(ResultActivity.this, "错误，不是网址......!", 0).show();
+					Toast.makeText(ResultActivity.this, "错误，不是网址......!",Toast.LENGTH_SHORT).show();
 				}
 			} 
 		});

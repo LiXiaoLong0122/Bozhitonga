@@ -285,8 +285,7 @@
             android:label="@string/title_activity_addfamily" />
         <!--投诉与建议-->
         <activity android:name=".activity.AdvocacyAndComplaintActivity"
-            android:label="@string/title_activity_advocacyandcomplaint"
-            ></activity>
+            android:label="@string/title_activity_advocacyandcomplaint"></activity>
     </application>
 
 </manifest>
