@@ -38,7 +38,7 @@ public class PopupwindowPhoto {
     private View view;
     private Fragment mf;
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE2 = 1;
-    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 6;
+    private static  int CAMER_PHOTO ;
 
     public PopupwindowPhoto(Activity mActivity, Fragment mf) {
         this.mActivity = mActivity;
@@ -84,7 +84,7 @@ public class PopupwindowPhoto {
             });
             bt1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-
+                    CAMER_PHOTO = 1;
                     if (Integer.parseInt(Build.VERSION.SDK) >= 23) {
 
                         if (ContextCompat.checkSelfPermission(mActivity,
@@ -111,17 +111,27 @@ public class PopupwindowPhoto {
             });
             bt2.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-
+                    CAMER_PHOTO =2;
                     if (Integer.parseInt(Build.VERSION.SDK) >= 23) {
 
+//                        if (ContextCompat.checkSelfPermission(mActivity,
+//                                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//                                != PackageManager.PERMISSION_GRANTED) {
+//                            //权限还没有授予，需要在这里写申请权限的代码
+//
+//                            ActivityCompat.requestPermissions(mActivity,
+//                                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+//                                    MY_PERMISSIONS_REQUEST_CALL_PHONE2);
+//                        } else {
                         if (ContextCompat.checkSelfPermission(mActivity,
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE)
                                 != PackageManager.PERMISSION_GRANTED) {
+                            //Android 6.0以上 不能只是在AndroidManifest.xml中进行配置 还要在代码中动态设置权限
+
                             //权限还没有授予，需要在这里写申请权限的代码
 
-                            ActivityCompat.requestPermissions(mActivity,
-                                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                                    MY_PERMISSIONS_REQUEST_CALL_PHONE2);
+                            ActivityCompat.requestPermissions(mActivity, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_CALL_PHONE2);
+
                         } else {
                             intentAlbumActivity();
                         }
@@ -176,23 +186,33 @@ public class PopupwindowPhoto {
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == MY_PERMISSIONS_REQUEST_CALL_PHONE2) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+switch (CAMER_PHOTO){
+    case 1:
 
-                photo();
-                dismiss();
+        photo();
+        dismiss();
+        break;
+    case 2:
+        intentAlbumActivity();
+        break;
+
+
+}
+
             } else {
 
                 Toast.makeText(mActivity, "Permission Denied", Toast.LENGTH_SHORT).show();
 
             }
         }
-        if (requestCode == MY_PERMISSIONS_REQUEST_CALL_PHONE) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                intentAlbumActivity();
-            } else {
-                // Permission Denied
-                Toast.makeText(mActivity, "Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        }
+//        if (requestCode == MY_PERMISSIONS_REQUEST_CALL_PHONE) {
+//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                intentAlbumActivity();
+//            } else {
+//                // Permission Denied
+//                Toast.makeText(mActivity, "Permission Denied", Toast.LENGTH_SHORT).show();
+//            }
+//        }
 
     }
 
