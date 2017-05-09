@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 /*import android.support.v7.app.AppCompatActivity;*/
@@ -153,6 +154,14 @@ private TextView tv_purpose,tv_type;
         });
     }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        pop.onRequestPermissionsResult(requestCode,permissions,grantResults);
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
 
     public void OpenRightMenu() {
         DrawerLayoutUtils.OpenRightMenu(mDrawerLayout);

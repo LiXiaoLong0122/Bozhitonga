@@ -6,15 +6,18 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -52,7 +55,8 @@ public class Profile extends Activity implements OnClickListener {
     private RoundImageView iv_head;
 
     private File mOutputFile;
-private TimePopupWindow timeDialog;
+    private TimePopupWindow timeDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -124,12 +128,12 @@ private TimePopupWindow timeDialog;
                 startActivity(intent2);
                 break;
             case R.id.gender:
-              //  showChooseDialog();
+                //  showChooseDialog();
                 new DialogTool(this).showChooseDialog(tv_gender);
                 break;
             case R.id.birthday:
 
-                timeDialog.showBottoPopupWindow("请选择时间",tv);
+                timeDialog.showBottoPopupWindow("请选择时间", tv);
 
 //                new DatePickerDialog(Profile.this, new DatePickerDialog.OnDateSetListener() {
 //                    @Override
@@ -167,7 +171,6 @@ private TimePopupWindow timeDialog;
     ;
 
 
-
     private void showPopupWindow(View view) {
         if (mPopupWindow == null) {
             View popupView = getLayoutInflater().inflate(R.layout.pop_head, null);
@@ -191,14 +194,45 @@ private TimePopupWindow timeDialog;
                 dialog.dismiss();//随便点击一个item消失对话框，不用点击确认取消
                 switch (which) {
                     case 0:
-//                        //Android 6.0以上 不能只是在AndroidManifest.xml中进行配置 还要在代码中动态设置权限
-//                        ActivityCompat.requestPermissions(Profile.this,new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+                        if (Integer.parseInt(Build.VERSION.SDK) >= 23) {
+
+                            if (ContextCompat.checkSelfPermission(Profile.this,
+                                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                                    != PackageManager.PERMISSION_GRANTED) {
+                                //Android 6.0以上 不能只是在AndroidManifest.xml中进行配置 还要在代码中动态设置权限
+
+                                //权限还没有授予，需要在这里写申请权限的代码
+
+                                ActivityCompat.requestPermissions(Profile.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+
+                            } else {
 //
-                        startCameraActivity();
+                                startCameraActivity();
+                            }
+                        } else {
+                            startCameraActivity();
+                        }
                         break;
                     case 1:
                         //照片
-                        startPhotoActivity();
+
+                        if (Integer.parseInt(Build.VERSION.SDK) >= 23) {
+
+                            if (ContextCompat.checkSelfPermission(Profile.this,
+                                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                                    != PackageManager.PERMISSION_GRANTED) {
+                                //权限还没有授予，需要在这里写申请权限的代码
+
+                                ActivityCompat.requestPermissions(Profile.this,
+                                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                        7);
+                            } else {
+                                startPhotoActivity();
+                            }
+                        } else {
+                            startPhotoActivity();
+                        }
+
                         break;
                 }
 
@@ -270,7 +304,7 @@ private TimePopupWindow timeDialog;
     //系统相机界面关闭后
     private void onSystemPhotoFinished(int resultCode, Intent data) {
         if (resultCode == RESULT_CANCELED) {//点击取消
-            Toast.makeText(this, "相册取消", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "相机取消", Toast.LENGTH_LONG).show();
             return;
         }
         if (resultCode != RESULT_OK) {
@@ -357,4 +391,28 @@ private TimePopupWindow timeDialog;
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+
+        if (requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                startCameraActivity();
+            } else {
+
+                Toast.makeText(Profile.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+
+            }
+        }
+        if (requestCode == 7) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                startPhotoActivity();
+            } else {
+                // Permission Denied
+                Toast.makeText(Profile.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
 }

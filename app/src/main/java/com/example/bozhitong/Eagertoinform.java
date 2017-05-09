@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -52,6 +53,14 @@ public class Eagertoinform extends Activity implements OnClickListener {
 				R.drawable.icon_addpic_unfocused);
 		PublicWay.activityList.add(this);
 
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+		pop.onRequestPermissionsResult(requestCode,permissions,grantResults);
+
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 	}
 
 	private void addListener() {

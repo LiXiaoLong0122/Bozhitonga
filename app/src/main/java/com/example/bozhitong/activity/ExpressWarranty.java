@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
@@ -226,7 +227,13 @@ private ArrayList<String> itemList=new ArrayList<String>();
         ll_time.setVisibility(View.GONE);
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
+        pop.onRequestPermissionsResult(requestCode,permissions,grantResults);
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -62,7 +63,13 @@ public class Transferofidle extends Activity implements OnClickListener {
 		
 	}
 
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
+		pop.onRequestPermissionsResult(requestCode,permissions,grantResults);
+
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+	}
 	private void initView() {
 		mBack = (ImageView) findViewById(R.id.img_back);
 

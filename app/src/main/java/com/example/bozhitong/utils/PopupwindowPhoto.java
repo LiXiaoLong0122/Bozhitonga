@@ -1,10 +1,17 @@
 package com.example.bozhitong.utils;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+
+
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +20,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.bozhitong.AlbumActivity;
+import com.example.bozhitong.Profile;
 import com.example.bozhitong.R;
 
 /**
@@ -28,22 +37,25 @@ public class PopupwindowPhoto {
     private RelativeLayout parent;
     private View view;
     private Fragment mf;
+    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE2 = 1;
+    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 6;
 
     public PopupwindowPhoto(Activity mActivity, Fragment mf) {
         this.mActivity = mActivity;
         this.mf = mf;
     }
+
     public PopupwindowPhoto(Activity mActivity) {
         this.mActivity = mActivity;
 
     }
 
 
-    public void showpopPhotoAtLocation( int gravity, int x, int y) {
+    public void showpopPhotoAtLocation(int gravity, int x, int y) {
 
         if (mpop == null) {
             mpop = new PopupWindow();
-             view = LayoutInflater.from(mActivity).inflate(R.layout.item_popupwindows,
+            view = LayoutInflater.from(mActivity).inflate(R.layout.item_popupwindows,
                     null);
 
             ll_popup = (LinearLayout) view.findViewById(R.id.ll_popup);
@@ -72,19 +84,52 @@ public class PopupwindowPhoto {
             });
             bt1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                 photo();
-                 dismiss();
+
+                    if (Integer.parseInt(Build.VERSION.SDK) >= 23) {
+
+                        if (ContextCompat.checkSelfPermission(mActivity,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                                != PackageManager.PERMISSION_GRANTED) {
+                            //Android 6.0以上 不能只是在AndroidManifest.xml中进行配置 还要在代码中动态设置权限
+
+                            //权限还没有授予，需要在这里写申请权限的代码
+
+                            ActivityCompat.requestPermissions(mActivity, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_CALL_PHONE2);
+
+                        } else {
+                            photo();
+                            dismiss();
+                        }
+                    } else {
+                        photo();
+                        dismiss();
+
+                    }
+
 
                 }
             });
             bt2.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Intent intent = new Intent(mActivity,
-                            AlbumActivity.class);
-                    mActivity.startActivity(intent);
-                    mActivity.overridePendingTransition(R.anim.activity_translate_in,
-                            R.anim.activity_translate_out);
-                    dismiss();
+
+                    if (Integer.parseInt(Build.VERSION.SDK) >= 23) {
+
+                        if (ContextCompat.checkSelfPermission(mActivity,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                                != PackageManager.PERMISSION_GRANTED) {
+                            //权限还没有授予，需要在这里写申请权限的代码
+
+                            ActivityCompat.requestPermissions(mActivity,
+                                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                    MY_PERMISSIONS_REQUEST_CALL_PHONE2);
+                        } else {
+                            intentAlbumActivity();
+                        }
+                    } else {
+                        intentAlbumActivity();
+                    }
+
+
                 }
             });
             bt3.setOnClickListener(new View.OnClickListener() {
@@ -99,6 +144,16 @@ public class PopupwindowPhoto {
         mpop.showAtLocation(view, gravity, x, y);
     }
 
+
+    private void intentAlbumActivity() {
+        Intent intent = new Intent(mActivity,
+                AlbumActivity.class);
+        mActivity.startActivity(intent);
+        mActivity.overridePendingTransition(R.anim.activity_translate_in,
+                R.anim.activity_translate_out);
+        dismiss();
+    }
+
     public void dismiss() {
         if (mpop.isShowing()) {
             mpop.dismiss();
@@ -108,12 +163,37 @@ public class PopupwindowPhoto {
     }
 
     public void photo() {
+
         Intent openCameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (mf != null) {
             mf.startActivityForResult(openCameraIntent, ContentValuse.TAKE_PICTURE);
-        }else {
+        } else {
             mActivity.startActivityForResult(openCameraIntent, ContentValuse.TAKE_PICTURE);
         }
+    }
+
+
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == MY_PERMISSIONS_REQUEST_CALL_PHONE2) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                photo();
+                dismiss();
+            } else {
+
+                Toast.makeText(mActivity, "Permission Denied", Toast.LENGTH_SHORT).show();
+
+            }
+        }
+        if (requestCode == MY_PERMISSIONS_REQUEST_CALL_PHONE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                intentAlbumActivity();
+            } else {
+                // Permission Denied
+                Toast.makeText(mActivity, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 
 
