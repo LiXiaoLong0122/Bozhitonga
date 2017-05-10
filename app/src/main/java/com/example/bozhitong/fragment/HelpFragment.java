@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.bozhitong.R;
+import com.example.bozhitong.fragment.adapter.HelpAdapter;
 import com.example.bozhitong.fragment.adapter.ListViewTask;
 
 import java.util.ArrayList;
@@ -17,10 +18,10 @@ import java.util.List;
 
 public class HelpFragment extends Fragment {
 	private ListView lstv;
-	private ListViewTask adapter;
+	private HelpAdapter adapter;
 	private Context mContext;
 	private View view;
-	private List<String> list = new ArrayList<String>();
+	private ArrayList<String> list = new ArrayList<String>();
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -33,15 +34,15 @@ public class HelpFragment extends Fragment {
 							 ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.activity_help, null);
 		lstv = (ListView) view.findViewById(R.id.tasks_lstv);
-		initData();
-		adapter = new ListViewTask(mContext, list);
+		list.addAll(initData());
+		adapter = new HelpAdapter(mContext, list);
 		lstv.setAdapter(adapter);
 		return view;
 	}
 
 	private List<String> initData() {
 		for (int i = 0; i < 10; i++) {
-			list.add("这是第" + i + "条数据");
+			list.add("丢狗了");
 		}
 		return list;
 	}

@@ -9,6 +9,8 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.example.bozhitong.activity.OtherUserDetailActivity;
+
 public class Apply extends Activity implements OnClickListener {
 	private RelativeLayout mRL_neighbours,mRL_apply;
 	private ImageView mChacha;
@@ -40,9 +42,9 @@ public class Apply extends Activity implements OnClickListener {
 			break;
 		case R.id.rL_apply:
 			finish();
-		/*	Intent intent1 = new Intent(); 
-			intent1.setClass(this, Myattention.class);
-			startActivity(intent1);*/
+			Intent intent1 = new Intent();
+			intent1.setClass(this, OtherUserDetailActivity.class);
+			startActivity(intent1);
 			break;
 
 		default:

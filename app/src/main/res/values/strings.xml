@@ -155,4 +155,6 @@
     <string name="title_activity_paycost">PayCost</string>
     <string name="title_activity_addfamily">AddFamily</string>
     <string name="title_activity_advocacyandcomplaint">AdvocacyAndComplaint</string>
+    <string name="title_activity_otheruserdetail">OtherUserDetailActivity</string>
+    <string name="title_activity_otherusermore">OtherUserMore</string>
 </resources>

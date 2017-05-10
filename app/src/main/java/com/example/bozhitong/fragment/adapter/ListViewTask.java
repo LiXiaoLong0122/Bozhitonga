@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.bozhitong.Integral;
 import com.example.bozhitong.R;
+import com.example.bozhitong.activity.OtherUserDetailActivity;
 import com.example.bozhitong.activity.TaskDetailedActivity;
 
 import java.util.List;
@@ -54,6 +55,7 @@ public class ListViewTask extends BaseAdapter {
             holder.iv = (ImageView) convertView.findViewById(R.id.iv_like);
             holder.ll_select = (LinearLayout) convertView.findViewById(R.id.ll_select);
             holder.tv_like = (TextView) convertView.findViewById(R.id.tv_like);
+            holder.iv_head = (ImageView) convertView.findViewById(R.id.iv_head);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -69,7 +71,14 @@ public class ListViewTask extends BaseAdapter {
                 context.startActivity(intent);
             }
         });
-
+        holder.iv_head.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(context, OtherUserDetailActivity.class);
+                context.startActivity(intent);
+            }
+        });
 
 
         return convertView;
@@ -77,7 +86,7 @@ public class ListViewTask extends BaseAdapter {
 
     private static class ViewHolder {
         TextView text, tv_like;
-        ImageView iv;
+        ImageView iv,iv_head;
 
         LinearLayout ll_select;
         LinearLayout ll_task;

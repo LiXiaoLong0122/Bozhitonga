@@ -287,10 +287,19 @@
         <activity
             android:name=".activity.AdvocacyAndComplaintActivity"
             android:label="@string/title_activity_advocacyandcomplaint" />
+        <!-- 人脸布控 -->
         <activity android:name=".activity.FaceActivity" />
         <!-- 快递 -->
         <activity android:name=".activity.FastMailServiceActivity" />
-        <activity android:name=".activity.OtherUserDetailActivity"></activity>
+        <!-- 其他用户详情 -->
+        <activity
+            android:name=".activity.OtherUserDetailActivity"
+            android:label="@string/title_activity_otheruserdetail" />
+        <!--用户详情更多-->
+        <activity android:name=".activity.OtherUserMoreActivity"
+            android:label="@string/title_activity_otherusermore"
+            android:theme="@style/Theme.FloatActivity"
+            ></activity>
     </application>
 
 </manifest>
