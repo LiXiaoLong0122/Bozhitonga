@@ -38,7 +38,7 @@ public class PopupwindowPhoto {
     private View view;
     private Fragment mf;
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE2 = 1;
-    private static  int CAMER_PHOTO ;
+    private static int CAMER_PHOTO;
 
     public PopupwindowPhoto(Activity mActivity, Fragment mf) {
         this.mActivity = mActivity;
@@ -111,7 +111,7 @@ public class PopupwindowPhoto {
             });
             bt2.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    CAMER_PHOTO =2;
+                    CAMER_PHOTO = 2;
                     if (Integer.parseInt(Build.VERSION.SDK) >= 23) {
 
 //                        if (ContextCompat.checkSelfPermission(mActivity,
@@ -186,18 +186,18 @@ public class PopupwindowPhoto {
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == MY_PERMISSIONS_REQUEST_CALL_PHONE2) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-switch (CAMER_PHOTO){
-    case 1:
+                switch (CAMER_PHOTO) {
+                    case 1:
 
-        photo();
-        dismiss();
-        break;
-    case 2:
-        intentAlbumActivity();
-        break;
+                        photo();
+                        dismiss();
+                        break;
+                    case 2:
+                        intentAlbumActivity();
+                        break;
 
 
-}
+                }
 
             } else {
 

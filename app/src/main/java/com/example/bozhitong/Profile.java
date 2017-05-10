@@ -96,7 +96,11 @@ public class Profile extends Activity implements OnClickListener {
 
         iv_head = (RoundImageView) findViewById(R.id.iv_head);
         tv = (TextView) findViewById(R.id.tv);
+
+
         timeDialog = new TimePopupWindow(this);
+
+
     }
 
     @Override

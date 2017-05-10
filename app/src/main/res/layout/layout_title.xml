@@ -28,6 +28,7 @@
            android:layout_height="match_parent"
            android:textColor="@color/white"
            android:text="收藏"
+           android:drawableLeft="@drawable/collection"
            android:textSize="20sp"
            android:layout_marginRight="10dp"
            android:layout_alignParentRight="true"

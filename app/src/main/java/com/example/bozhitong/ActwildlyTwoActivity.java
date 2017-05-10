@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.bozhitong.photo.adapter.GridAdapter;
@@ -34,6 +35,9 @@ private TimePopupWindow timePopupWindow;
 
     private PopupwindowPhoto pop;
     public static Bitmap bimap;
+
+    private RadioGroup rg_actwildly;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,6 +89,9 @@ private TimePopupWindow timePopupWindow;
         });
 
 
+
+        rg_actwildly = (RadioGroup) findViewById(R.id.rg_actwildly);
+        rg_actwildly.check(R.id.but_find);
     }
     private void initPhoto() {
         pop = new PopupwindowPhoto(this);

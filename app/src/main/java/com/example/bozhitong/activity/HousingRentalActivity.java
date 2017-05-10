@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import com.example.bozhitong.R;
 import com.example.bozhitong.dialog.view.AutoListView;
@@ -81,6 +82,13 @@ public class HousingRentalActivity extends Activity implements
 		lstv.setOnRefreshListener(this);
 		lstv.setOnLoadListener(this);
 		lstv.setOnItemClickListener(this);
+
+		RadioGroup rb_all = (RadioGroup)findViewById(R.id.rb_all);
+		rb_all.check(R.id.rbut_all);
+
+
+
+
 		initData();
 	}
 

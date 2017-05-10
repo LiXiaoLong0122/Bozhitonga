@@ -65,6 +65,9 @@ private ArrayList<String> itemList=new ArrayList<String>();
     private PopupwindowPhoto pop;
     public static Bitmap bimap;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -141,6 +144,7 @@ private ArrayList<String> itemList=new ArrayList<String>();
 
 
         RadioGroup rg_group = (RadioGroup) findViewById(R.id.rg_group);
+        rg_group.check(R.id.rb_private);
         rg_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -157,6 +161,9 @@ private ArrayList<String> itemList=new ArrayList<String>();
 
             }
         });
+
+
+
 
 
 

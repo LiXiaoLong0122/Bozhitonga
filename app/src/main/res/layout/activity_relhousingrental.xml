@@ -48,11 +48,13 @@
             android:orientation="vertical">
 
             <RadioGroup
+                android:id="@+id/rg_group"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/rbut_lease"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
@@ -65,6 +67,7 @@
                     android:textColor="@drawable/rb_text_bg" />
 
                 <RadioButton
+                    android:id="@+id/rbut_sell"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"

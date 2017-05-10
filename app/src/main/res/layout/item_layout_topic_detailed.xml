@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/iv_discuss"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/tx" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_discuss"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_discuss"
+            android:text="12334213411"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_discuss"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_discuss"
+            android:text="测试    2017-12-1"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_ev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="好玩啊"
+        android:textSize="18sp"
+
+        />
+
+</LinearLayout>

@@ -65,9 +65,21 @@
             <!--android:textColor="#ffffff" />-->
 
         <RadioGroup
+            android:id="@+id/rb_all"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbut_all"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:text="全部"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_zc_cd"
+                android:textColor="@drawable/rb_text_bg"
+                android:button="@null"
+                />
             <RadioButton
                 android:layout_width="60dp"
                 android:layout_height="match_parent"

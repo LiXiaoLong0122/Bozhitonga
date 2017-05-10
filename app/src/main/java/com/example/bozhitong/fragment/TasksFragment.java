@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.bozhitong.R;
@@ -42,6 +43,7 @@ public class TasksFragment extends Fragment {
 							 ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.activity_tasks, null);
 		lstv = (ListView) view.findViewById(R.id.tasks_lstv);
+
 		initData();
 		adapter = new ListViewTask(mContext, list);
 		lstv.setAdapter(adapter);
@@ -53,6 +55,8 @@ public class TasksFragment extends Fragment {
 				startActivity(intent);
 			}
 		});
+
+
 
 		return view;
 	}

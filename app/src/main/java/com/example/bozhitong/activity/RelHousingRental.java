@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import com.example.bozhitong.GalleryActivity;
 import com.example.bozhitong.R;
@@ -70,6 +72,9 @@ public class RelHousingRental extends Activity implements OnClickListener {
 		mBack = (ImageView) findViewById(R.id.rehousing_iv);
 		mBack.setOnClickListener(this);
 
+		RadioGroup rg_group  = (RadioGroup)findViewById(R.id.rg_group);
+		rg_group.check(R.id.rbut_lease);
+
 
 		noScrollgridview = (GridView) findViewById(R.id.noScrollgridview);
 		noScrollgridview.setSelector(new ColorDrawable(Color.TRANSPARENT));
@@ -113,7 +118,13 @@ public class RelHousingRental extends Activity implements OnClickListener {
 		super.onStart();
 	}
 
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
+		pop.onRequestPermissionsResult(requestCode,permissions,grantResults);
+
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+	}
 
 
 	@Override

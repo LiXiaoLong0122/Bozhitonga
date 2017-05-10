@@ -8,10 +8,11 @@ import android.graphics.Bitmap;
 
 public class ContentValuse {
     public static Bitmap MBITMAP;
+    //用户头像是否变化
     public static  boolean ischange = false;
 
     public static final   int  INTENT_PROFILE = 100;
-public static final String BITMAP_PROFILE="bitmap";
+   public static final String BITMAP_PROFILE="bitmap";
     public static final int  BITMAP_BACK=0x000021;
     public static final int TAKE_PICTURE = 0x000001;
 

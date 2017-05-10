@@ -174,6 +174,7 @@
     android:orientation="horizontal" >
 
     <LinearLayout
+        android:id="@+id/ll_select"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -181,22 +182,23 @@
         android:orientation="horizontal" >
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:id="@+id/iv_like"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="center"
-            android:src="@drawable/taskdia"
             android:padding="5dp"
-            android:gravity="center|right" />
+            android:gravity="center|right"
+            android:background="@drawable/item_task_shou"
+            />
 
         <TextView
-            android:id="@+id/tv_liaotian"
+            android:id="@+id/tv_like"
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginLeft="2dp"
             android:gravity="center|left"
-            android:text="66" />
+            android:text="" />
     </LinearLayout>
 
     <View

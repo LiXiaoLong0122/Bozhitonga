@@ -193,7 +193,15 @@
         android:layout_height="1dp"
         android:background="#d5d5d5" />
 
-
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_margin="20dp"
+    android:text="提交"
+    android:textColor="@color/white"
+    android:textSize="18sp"
+    android:background="@drawable/btn_zc_bg"
+    />
 
 
 </LinearLayout>

@@ -21,6 +21,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.example.bozhitong.utils.ContentValuse;
+import com.example.bozhitong.view.RoundImageView;
+
 public class Circle extends Activity implements OnClickListener {
 
 	private ImageView mBack;
@@ -32,7 +35,7 @@ public class Circle extends Activity implements OnClickListener {
 	        mNoReleasetopic,mBlacklist;
 	
 	
-	
+	private RoundImageView rim;
 	
 	
 	//相册
@@ -78,6 +81,11 @@ public class Circle extends Activity implements OnClickListener {
         mCollecttopic=(LinearLayout) findViewById(R.id.Collecttopic);
         mNoReleasetopic=(LinearLayout) findViewById(R.id.NoReleasetopic);
         mBlacklist=(LinearLayout) findViewById(R.id.blacklist);
+		rim = (RoundImageView)findViewById(R.id.im_center);
+		if (ContentValuse.MBITMAP != null){
+			rim.setImageBitmap(ContentValuse.MBITMAP);
+		}
+
 	}
 	@Override
 	public void onClick(View v) {

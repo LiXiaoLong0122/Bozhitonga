@@ -15,8 +15,6 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/log"
@@ -285,9 +283,14 @@
         <activity
             android:name=".AddFamilyActivity"
             android:label="@string/title_activity_addfamily" />
-        <!--投诉与建议-->
-        <activity android:name=".activity.AdvocacyAndComplaintActivity"
-            android:label="@string/title_activity_advocacyandcomplaint"></activity>
+        <!-- 投诉与建议 -->
+        <activity
+            android:name=".activity.AdvocacyAndComplaintActivity"
+            android:label="@string/title_activity_advocacyandcomplaint" />
+        <activity android:name=".activity.FaceActivity" />
+        <!-- 快递 -->
+        <activity android:name=".activity.FastMailServiceActivity" />
+        <activity android:name=".activity.OtherUserDetailActivity"></activity>
     </application>
 
 </manifest>
