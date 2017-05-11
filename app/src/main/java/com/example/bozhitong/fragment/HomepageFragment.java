@@ -3,13 +3,17 @@ package com.example.bozhitong.fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.InflateException;
 import android.view.LayoutInflater;
@@ -21,10 +25,20 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MyLocationData;
 import com.example.bozhitong.MainActivity;
 import com.example.bozhitong.MipcaActivityCapture;
+import com.example.bozhitong.MyContentHandler;
+import com.example.bozhitong.MyNetwork;
 import com.example.bozhitong.R;
 import com.example.bozhitong.activity.AccessControl;
 import com.example.bozhitong.activity.FightGroups;
@@ -44,15 +58,25 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.stevenhu.android.phone.bean.ADInfo;
 import com.stevenhu.android.phone.utils.ViewFactory;
 
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.StringReader;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
+
+import javax.xml.parsers.SAXParserFactory;
 
 import cn.androiddevelop.cycleviewpager.lib.CycleViewPager;
 import cn.androiddevelop.cycleviewpager.lib.CycleViewPager.ImageCycleViewListener;
@@ -67,7 +91,39 @@ import cn.androiddevelop.cycleviewpager.lib.CycleViewPager.ImageCycleViewListene
  * @author 12306
  * 
  */
+@SuppressLint("SimpleDateFormat")
 public class HomepageFragment extends Fragment implements OnClickListener {
+
+	// 头部
+	TextView tev_head_city, tev_head_weather;
+
+	// 中间
+	TextView tev_weather_week1, tev_week1_temperature, tev_week1_date;
+	ImageView img_week1_weather;
+
+	// 底部
+	Button btn_addcity;
+	// 设置数据相关
+	MyNetwork myNetwork = new MyNetwork();
+	MyContentHandler myContentHandler = new MyContentHandler();
+	SimpleDateFormat dateformatter = new SimpleDateFormat("MM-dd");
+	SimpleDateFormat weekformatter = new SimpleDateFormat("EEEE");
+	ProgressDialog pd;
+	List<String> list_weather;
+
+	// 设置地图定位相关
+	String location_city;
+	MapView mapView;
+	BaiduMap baiduMap;
+	LocationClient locationClient;
+	MyBDLocationListener myBDLocationListener = new MyBDLocationListener();
+
+
+
+
+
+
+
 	private View mView;
 	private Activity mContext;
     private FrameLayout mFlpager;
@@ -158,7 +214,23 @@ public class HomepageFragment extends Fragment implements OnClickListener {
 
 		initview();
 		initdata();
+
+		initMapLocation();
+		list_weather = new ArrayList<>();
+
+		setWeekData(dateformatter, weekformatter);
+		checkNetworkState();
 		return mView;
+	}
+	@Override
+	public void onResume() {
+		location();
+		super.onResume();
+	}
+
+	private void initMapLocation() {
+		mapView = new MapView(mContext);
+		baiduMap = mapView.getMap();
 	}
 
 	@SuppressLint("NewApi")
@@ -378,7 +450,7 @@ public class HomepageFragment extends Fragment implements OnClickListener {
 														Toast.makeText(
 																mContext,
 																"图片成功存至myscan目录下",
-																0).show();
+																Toast.LENGTH_SHORT).show();
 
 													} catch (Exception e) {
 														// TODO Auto-generated
@@ -407,7 +479,7 @@ public class HomepageFragment extends Fragment implements OnClickListener {
 												}
 											} else {
 												Toast.makeText(mContext,
-														"SDCard存储空间不足", 0)
+														"SDCard存储空间不足", Toast.LENGTH_SHORT)
 														.show();
 											}
 
@@ -499,6 +571,21 @@ public class HomepageFragment extends Fragment implements OnClickListener {
 	}
 
 	private void initview() {
+		// head
+		tev_head_city = (TextView) mView.findViewById(R.id.tev_main_city);
+		tev_head_weather = (TextView) mView.findViewById(R.id.tev_main_currentWeather);
+
+		// middle
+		// week1
+		tev_weather_week1 = (TextView) mView.findViewById(R.id.tev_weather_week1);
+		tev_week1_temperature = (TextView) mView.findViewById(R.id.tev_weather_week1_temperature);
+		tev_week1_date = (TextView) mView.findViewById(R.id.tev_weather_week1_date);
+		img_week1_weather = (ImageView) mView.findViewById(R.id.img_weather_week1);
+
+
+
+
+
 		mFlpager=(FrameLayout) mView.findViewById(R.id.Fl_pager);
 		mScrollView=(LinearLayout) mView.findViewById(R.id.Rl_Layout);
 		create = (Button) mView.findViewById(R.id.create);
@@ -558,4 +645,246 @@ public class HomepageFragment extends Fragment implements OnClickListener {
 		return null;
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// 获取天气信息
+	public void getWeather(String city_name, String day, final String key)
+			throws UnsupportedEncodingException {
+		city_name = URLEncoder.encode(city_name, "gbk");
+		String urlStr = "http://php.weather.sina.com.cn/xml.php?city="
+				+ city_name + "&password=DJOYnieT8234jlsK&day=" + day + "";
+		Toast.makeText(mContext, urlStr, Toast.LENGTH_SHORT);
+		myNetwork.getWeatherXml(urlStr, new MyNetwork.SuccessCallBack() {
+			@Override
+			public void onSuccess(String result) {
+
+				if (result.equals("") && pd.isShowing()) {
+					pd.dismiss();
+				}
+
+				MyContentHandler contentHandler;
+				if (key.equals("head")) {
+					try {
+						contentHandler = analysis(result);
+						setWeatherHeadView(analysis(result));
+						pd.dismiss();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+
+			}
+		}, new MyNetwork.FailCallBack() {
+			@Override
+			public void onFail() {
+				pd.dismiss();
+				Toast.makeText(mContext, "服务器繁忙，获取天气信息失败！",
+						Toast.LENGTH_SHORT).show();
+			}
+		});
+
+	}
+
+	// 解析xml
+	public MyContentHandler analysis(String s) throws Exception {
+
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		XMLReader xmlReader = factory.newSAXParser().getXMLReader();
+		xmlReader.setContentHandler(myContentHandler);
+		xmlReader.parse(new InputSource(new StringReader(s)));
+
+		return myContentHandler;
+	}
+
+	// head + week1
+	public void setWeatherHeadView(MyContentHandler contentHandler) {
+		String city = contentHandler.getCity();
+		String status1 = contentHandler.getStatus1(), status2 = contentHandler
+				.getStatus2();
+		String temperature1 = contentHandler.getTemperature1(), temperature2 = contentHandler
+				.getTemperature2();
+		if (!TextUtils.isEmpty(city)) {
+			tev_head_city.setText(city);
+		}
+		if (!(TextUtils.isEmpty(status1) && TextUtils.isEmpty(status2))) {
+			if (status1.equals(status2)) {
+				tev_head_weather.setText(status1);
+				list_weather.add(status1);
+			} else {
+				tev_head_weather.setText(status1 + " 转 " + status2);
+				list_weather.add(status1 + " 转 " + status2);
+			}
+		}
+		if (!(TextUtils.isEmpty(temperature1) && TextUtils
+				.isEmpty(temperature2))) {
+			tev_week1_temperature.setText(temperature2+"℃" + "~" + temperature1+"℃");
+		}
+
+		// 设置天气图标
+		if (tev_head_weather.getText().toString().contains("多云")) {
+
+			img_week1_weather.setImageResource(R.drawable.img_weather_cloudy);
+		} else if (tev_head_weather.getText().toString().contains("晴")) {
+
+			img_week1_weather.setImageResource(R.drawable.img_weather_fine);
+		} else if (tev_head_weather.getText().toString().contains("雷")) {
+
+			img_week1_weather.setImageResource(R.drawable.img_weather_thunder);
+		} else if (tev_head_weather.getText().toString().contains("雨")) {
+
+			img_week1_weather.setImageResource(R.drawable.img_weather_rain);
+		} else if (tev_head_weather.getText().toString().contains("雪")) {
+			;
+			img_week1_weather.setImageResource(R.drawable.img_weather_snow);
+		} else {
+
+			img_week1_weather.setImageResource(R.drawable.img_weather_cloudy);
+		}
+
+	}
+
+	// 设置温度和天气图标
+	public void setWeatherWeekView(TextView tev_temperature,
+								   ImageView img_weather, MyContentHandler contentHandler) {
+		String temperature1 = contentHandler.getTemperature1(), temperature2 = contentHandler
+				.getTemperature2();
+		String status1 = contentHandler.getStatus1(), status2 = contentHandler
+				.getStatus2();
+		if (!(TextUtils.isEmpty(temperature1) && TextUtils
+				.isEmpty(temperature2))) {
+			tev_temperature.setText(temperature2 + "/" + temperature1);
+		}
+		if (!(TextUtils.isEmpty(status1) && TextUtils.isEmpty(status2))) {
+			if (status1.equals(status2)) {
+				list_weather.add(status1);
+			} else {
+				list_weather.add(status1 + " 转 " + status2);
+			}
+		}
+
+		// 设置天气图标
+		if ((status1 + status2).contains("多云")) {
+			img_weather.setImageResource(R.drawable.img_weather_cloudy);
+		} else if ((status1 + status2).contains("晴")) {
+			img_weather.setImageResource(R.drawable.img_weather_fine);
+		} else if ((status1 + status2).contains("雷")) {
+			img_weather.setImageResource(R.drawable.img_weather_thunder);
+		} else if ((status1 + status2).contains("雨")) {
+			img_weather.setImageResource(R.drawable.img_weather_rain);
+		} else if ((status1 + status2).contains("雪")) {
+			img_weather.setImageResource(R.drawable.img_weather_snow);
+		} else {
+			img_weather.setImageResource(R.drawable.img_weather_cloudy);
+		}
+
+	}
+
+	// 设置星期和日期
+	@SuppressWarnings("static-access")
+	public void setWeekData(SimpleDateFormat dateFormat,
+							SimpleDateFormat weekFormat) {
+
+		Date date = new Date(System.currentTimeMillis());
+		// 添加日期
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		String week1_date = dateFormat.format(date);
+		tev_weather_week1.setText(weekFormat.format(date));
+		tev_week1_date.setText(week1_date);
+
+
+	}
+
+	// 判断是否有可用的网络
+	private boolean checkNetworkState() {
+		boolean flag = false;
+		// 得到网络连接信息
+		ConnectivityManager manager = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+		// 去进行判断网络是否连接
+		if (manager.getActiveNetworkInfo() != null) {
+			flag = manager.getActiveNetworkInfo().isAvailable();
+		}
+		if (!flag) {
+			View view = LayoutInflater.from(mContext).inflate(
+					R.layout.mydialog, null);
+			new AlertDialog.Builder(mContext)
+					.setView(view)
+					.setPositiveButton("设置",
+							new DialogInterface.OnClickListener() {
+								@Override
+								public void onClick(DialogInterface arg0,
+													int arg1) {
+									Intent intent = new Intent(
+											"android.settings.WIRELESS_SETTINGS");
+									startActivity(intent);
+								}
+							}).setNegativeButton("取消", null).show();
+		} else {
+			pd = ProgressDialog.show(mContext, null, "正在查询......");
+		}
+
+		return flag;
+	}
+
+	// 定位设置
+	private void location() {
+		// 定位初始化
+		locationClient = new LocationClient(mContext);
+		// 注册监听函数：说明：当没有注册监听函数时，无法发起网络请求。
+		locationClient.registerLocationListener(myBDLocationListener);
+		LocationClientOption clientOption = new LocationClientOption();
+		clientOption.setCoorType("bd09ll");
+		clientOption.setScanSpan(1000);
+		clientOption.setIsNeedAddress(true);
+		locationClient.setLocOption(clientOption);
+		locationClient.start();// 开启定位
+	}
+
+	// 定位监听相关
+	class MyBDLocationListener implements BDLocationListener {
+
+		@Override
+		public void onReceiveLocation(BDLocation location) {
+			if (location == null || locationClient == null) {
+				return;
+			}
+			new MyLocationData.Builder().accuracy(location.getRadius())
+					.direction(100).latitude(location.getLatitude())
+					.longitude(location.getLongitude()).build();
+			location_city = location.getCity();
+			String[] city = location_city.split("市");
+			System.out.println("定位到的城市：-------------------->" + city[0]);
+			try {
+				getWeather(city[0], "0", "head");
+				getWeather(city[0], "1", "week1");
+				getWeather(city[0], "2", "week2");
+				getWeather(city[0], "3", "week3");
+				getWeather(city[0], "4", "week4");
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
