@@ -12,25 +12,23 @@ import com.example.bozhitong.R;
 import com.example.bozhitong.activity.OtherUserDetailActivity;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 /**
- * Created by Administrator on 2017-05-10.
+ * Created by Administrator on 2017-05-12.
  */
 
-public class HelpAdapter extends android.widget.BaseAdapter {
-    private ArrayList<String> list ;
-    private Context cen;
-    private ViewHolder mholder;
-
-    public HelpAdapter(Context cen, ArrayList<String> list){
-        this.list = list;
-        this.cen = cen;
+public class TalKAdapter extends BaseAdapter{
+    private ArrayList<String> itemList ;
+    private Context mcontent;
+    private ViewHolder  mholder;
+    public  TalKAdapter(Context con,ArrayList<String> items){
+        this.mcontent = con;
+        this.itemList = items;
     }
 
     @Override
     public int getCount() {
-        return list.size();
+        return itemList.size();
     }
 
     @Override
@@ -45,38 +43,31 @@ public class HelpAdapter extends android.widget.BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null)
-        {
+        if(convertView == null){
             mholder = new ViewHolder();
-            convertView = View.inflate(cen, R.layout.item_layout_help,null);
+            convertView = View.inflate(mcontent, R.layout.item_layout_talk,null);
             mholder.text = (TextView) convertView.findViewById(R.id.text);
-            mholder.tvaddress = (TextView)convertView.findViewById(R.id.tv_address);
-            mholder.iv = (ImageView)convertView.findViewById(R.id.iv_tup);
             mholder.iv_head = (ImageView)convertView.findViewById(R.id.iv_head);
             convertView.setTag(mholder);
-        }else
-        {
+        }else {
             mholder = (ViewHolder)convertView.getTag();
         }
 
-        mholder.text.setText(list.get(position));
-        mholder.tvaddress.setText("发生地点：明溪花园");
-        mholder.iv.setImageResource(R.drawable.tyzj);
+        mholder.text.setText(itemList.get(position));
         mholder.iv_head.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(cen, OtherUserDetailActivity.class);
-                cen.startActivity(intent);
+                intent.setClass(mcontent, OtherUserDetailActivity.class);
+                mcontent.startActivity(intent);
             }
         });
         return convertView;
     }
 
-    class ViewHolder {
-        TextView tvname,text,tvaddress;
-        ImageView iv,iv_head;
-
+    class ViewHolder{
+        TextView text;
+        ImageView iv_head;
     }
 
 }

@@ -16,7 +16,7 @@ import com.example.bozhitong.R;
 
 public class ShortcutKey extends PopupWindow {
 
-	private LinearLayout btn_take_photo, btn_pick_photo, btn_cancel,
+	private LinearLayout  btn_take_photo,btn_pick_photo, btn_cancel,
 			btn_service, btn_hjgj;
 	private View mMenuView;
 	private Activity mContext;
@@ -25,7 +25,7 @@ public class ShortcutKey extends PopupWindow {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mMenuView = inflater.inflate(R.layout.shortcut_key, null);
-		btn_take_photo = (LinearLayout) mMenuView.findViewById(R.id.btn_yjkm);
+	btn_take_photo = (LinearLayout) mMenuView.findViewById(R.id.btn_yjkm);
 		btn_pick_photo = (LinearLayout) mMenuView.findViewById(R.id.btn_yyxd);
 		btn_service = (LinearLayout) mMenuView.findViewById(R.id.btn_Service);
 		btn_hjgj = (LinearLayout) mMenuView.findViewById(R.id.btn_hjgj);

@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.example.bozhitong.R;
 import com.example.bozhitong.fragment.adapter.ListViewTask;
+import com.example.bozhitong.fragment.adapter.TalKAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +24,10 @@ import java.util.List;
  */
 public class TalkFragment extends Fragment {
 	private ListView lstv;
-	private ListViewTask adapter;
+	private TalKAdapter adapter;
 	private Context mContext;
 	private View view;
-	private List<String> list = new ArrayList<String>();
+	private ArrayList<String> list = new ArrayList<String>();
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -40,7 +41,7 @@ public class TalkFragment extends Fragment {
 		view = inflater.inflate(R.layout.activity_talk, null);
 		lstv = (ListView) view.findViewById(R.id.tasks_lstv);
 		initData();
-		adapter = new ListViewTask(mContext, list);
+		adapter = new TalKAdapter(mContext, list);
 		lstv.setAdapter(adapter);
 		return view;
 	}

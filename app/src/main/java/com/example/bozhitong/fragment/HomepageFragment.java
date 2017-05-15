@@ -1,5 +1,6 @@
 package com.example.bozhitong.fragment;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -7,12 +8,17 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.InflateException;
@@ -185,7 +191,7 @@ public class HomepageFragment extends Fragment implements OnClickListener {
 			"http://pic.58pic.com/58pic/12/64/27/55U58PICrdX.jpg" };
 
 	private MainActivity mainActivity;
-
+	private final int BAIDUMAP = 7;
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
@@ -215,7 +221,7 @@ public class HomepageFragment extends Fragment implements OnClickListener {
 		initview();
 		initdata();
 
-		initMapLocation();
+		baiduPower();
 		list_weather = new ArrayList<>();
 
 		setWeekData(dateformatter, weekformatter);
@@ -227,6 +233,27 @@ public class HomepageFragment extends Fragment implements OnClickListener {
 		location();
 		super.onResume();
 	}
+
+
+private void  baiduPower(){
+	if (Integer.parseInt(Build.VERSION.SDK) >= 23) {
+		if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION)
+				!= PackageManager.PERMISSION_GRANTED
+				|| ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION)
+				!= PackageManager.PERMISSION_GRANTED) {
+			//申请WRITE_EXTERNAL_STORAGE权限
+			ActivityCompat.requestPermissions(mContext,
+					new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+							Manifest.permission.ACCESS_FINE_LOCATION},
+					BAIDUMAP);
+		} else {
+			initMapLocation();
+		}
+	} else {
+		initMapLocation();
+	}
+}
+
 
 	private void initMapLocation() {
 		mapView = new MapView(mContext);
@@ -273,6 +300,15 @@ public class HomepageFragment extends Fragment implements OnClickListener {
 		mSmarthome = (LinearLayout) mView.findViewById(R.id.smarthome_ly);
 		mSmarthome.setOnClickListener(this);
 
+	}
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		if (requestCode == BAIDUMAP) {
+			if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				initMapLocation();
+			}
+		}
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 	}
 
 	private ImageCycleViewListener mAdCycleViewListener = new ImageCycleViewListener() {
