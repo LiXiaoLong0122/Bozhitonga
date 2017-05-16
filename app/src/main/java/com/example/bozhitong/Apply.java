@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.example.bozhitong.activity.BuyPointsActivity;
 import com.example.bozhitong.activity.OtherUserDetailActivity;
 
 public class Apply extends Activity implements OnClickListener {
@@ -39,12 +40,15 @@ public class Apply extends Activity implements OnClickListener {
 			Intent intent = new Intent();
 			intent.setClass(this, Myneighbor.class);
 			startActivity(intent);
+			finish();
 			break;
 		case R.id.rL_apply:
-			finish();
+
 			Intent intent1 = new Intent();
-			intent1.setClass(this, OtherUserDetailActivity.class);
+			intent1.setClass(this, BuyPointsActivity.class);
 			startActivity(intent1);
+			finish();
+
 			break;
 
 		default:

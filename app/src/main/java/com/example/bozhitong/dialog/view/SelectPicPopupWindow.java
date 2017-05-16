@@ -16,7 +16,7 @@ import com.example.bozhitong.R;
 
 public class SelectPicPopupWindow extends PopupWindow {
 
-	private LinearLayout btn_take_photo, btn_pick_photo, btn_cancel;
+	private LinearLayout btn_paybyalipay, btn_wechatpay, btn_cancel;
 	private View mMenuView;
 
 	public SelectPicPopupWindow(Activity context, OnClickListener itemsOnClick) {
@@ -24,10 +24,10 @@ public class SelectPicPopupWindow extends PopupWindow {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mMenuView = inflater.inflate(R.layout.alert_dialog, null);
-		btn_take_photo = (LinearLayout) mMenuView
-				.findViewById(R.id.btn_take_photo);
-		btn_pick_photo = (LinearLayout) mMenuView
-				.findViewById(R.id.btn_pick_photo);
+		btn_paybyalipay = (LinearLayout) mMenuView
+				.findViewById(R.id.btn_paybyalipay);
+		btn_wechatpay = (LinearLayout) mMenuView
+				.findViewById(R.id.btn_wechatpay);
 		btn_cancel = (LinearLayout) mMenuView.findViewById(R.id.btn_cancel);
 		// 取消按钮
 		btn_cancel.setOnClickListener(new OnClickListener() {
@@ -38,8 +38,8 @@ public class SelectPicPopupWindow extends PopupWindow {
 			}
 		});
 		// 设置按钮监听
-		btn_pick_photo.setOnClickListener(itemsOnClick);
-		btn_take_photo.setOnClickListener(itemsOnClick);
+		btn_wechatpay.setOnClickListener(itemsOnClick);
+		btn_paybyalipay.setOnClickListener(itemsOnClick);
 		// 设置SelectPicPopupWindow的View
 		this.setContentView(mMenuView);
 		// 设置SelectPicPopupWindow弹出窗体的宽

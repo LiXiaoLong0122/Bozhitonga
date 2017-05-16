@@ -17,7 +17,7 @@
         android:orientation="vertical" >
 
         <LinearLayout
-            android:id="@+id/btn_take_photo"
+            android:id="@+id/btn_paybyalipay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center" >
@@ -39,7 +39,7 @@
             android:background="@color/gainsboro" />
 
         <LinearLayout
-            android:id="@+id/btn_pick_photo"
+            android:id="@+id/btn_wechatpay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center" >
@@ -60,26 +60,26 @@
             android:layout_height="1dp"
             android:background="@color/gainsboro" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center" >
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center" >-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
-                android:drawableLeft="@drawable/unionpay"
-                android:drawablePadding="17dp"
-                android:text="银联支付"
-                android:textStyle="bold" />
-        </LinearLayout>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="15dp"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:drawableLeft="@drawable/unionpay"-->
+                <!--android:drawablePadding="17dp"-->
+                <!--android:text="银联支付"-->
+                <!--android:textStyle="bold" />-->
+        <!--</LinearLayout>-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gainsboro" />
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@color/gainsboro" />-->
 
         <LinearLayout
             android:id="@+id/btn_cancel"

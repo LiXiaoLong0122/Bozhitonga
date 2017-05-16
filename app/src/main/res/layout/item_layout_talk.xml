@@ -75,7 +75,8 @@
             android:layout_height="80dp"
             android:scaleType="fitXY"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/ml" />
+            android:src="@drawable/ml"
+            android:adjustViewBounds="false" />
 
     </LinearLayout>
 

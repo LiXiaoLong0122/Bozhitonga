@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_buy_points"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.bozhitong.activity.BuyPointsActivity">
+
+    <include layout="@layout/layout_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#d5d5d5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <com.example.bozhitong.view.RoundImageView
+            android:id="@+id/iv_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/tx" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:text="12424244645"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/iv_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/gender_female" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d5d5d5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="余额：0积分"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_zc_cd"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="500积分"
+            android:textColor="@drawable/rb_text_bg" />
+
+        <RadioButton
+            android:id="@+id/rb_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_zc_cd"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="1000积分"
+            android:textColor="@drawable/rb_text_bg" />
+
+        <RadioButton
+            android:id="@+id/rb_three"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_zc_cd"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="5000积分"
+            android:textColor="@drawable/rb_text_bg" />
+
+        <RadioButton
+            android:id="@+id/rb_other"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_zc_cd"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="其他数额"
+            android:textColor="@drawable/rb_text_bg" />
+
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="支付："
+            android:textSize="16sp"
+            android:textColor="#2a2a2a" />
+
+        <TextView
+            android:id="@+id/tv_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.0"
+            android:textSize="16sp"
+            android:textColor="@color/red"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 元"
+            android:textSize="16sp"
+            android:textColor="#2a2a2a" />
+
+        <TextView
+            android:id="@+id/tv_hide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(可获500积分)"
+            android:textColor="#B5B5B5"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_buypoints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="立即充值"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_zc_bg"
+        />
+
+
+</LinearLayout>

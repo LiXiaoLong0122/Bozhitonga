@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pay2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.bozhitong.activity.OrderPayActivity">
+<include layout="@layout/layout_title"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/shap_layout"
+        >
+
+        <TextView
+            android:id="@+id/tv_orderid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="订单编号：12312312344"
+            android:textSize="16sp"
+            android:padding="10dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d5d5d5" />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="10dp"
+           android:orientation="horizontal"
+           >
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               >
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="价格"
+                   android:layout_gravity="center_horizontal"
+                   android:textSize="16sp"
+                   android:padding="10dp"
+                   />
+
+               <TextView
+                   android:id="@+id/tv_price"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="5元"
+                   android:layout_gravity="center_horizontal"
+                   android:textColor="@color/red"
+                   android:textSize="16sp"
+                   android:padding="10dp"
+                   />
+
+
+
+           </LinearLayout>
+           <View
+               android:layout_width="1dp"
+               android:layout_height="match_parent"
+               android:background="#d5d5d5" />
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               >
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="支付状态"
+                   android:padding="10dp"
+                   android:layout_gravity="center_horizontal"
+                   android:textSize="16sp"
+                   />
+
+               <TextView
+                   android:id="@+id/tv_status"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   android:text="未付款"
+                   android:padding="10dp"
+                   android:textColor="@color/red"
+                   android:textSize="16sp"
+                   />
+
+           </LinearLayout>
+
+       </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/shap_layout"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="付款项"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d5d5d5" />
+
+     <ListView
+         android:id="@+id/lv_list"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="10dp"
+         >
+
+
+     </ListView>
+        
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_pay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="付  款"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_zc_bg"
+        />
+
+
+</LinearLayout>

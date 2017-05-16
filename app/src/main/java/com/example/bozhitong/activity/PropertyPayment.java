@@ -400,9 +400,9 @@ private TimePopupWindow timePopupWindow;
         public void onClick(View v) {
             menuWindow.dismiss();
             switch (v.getId()) {
-                case R.id.btn_take_photo:
+                case R.id.btn_paybyalipay:
                     break;
-                case R.id.btn_pick_photo:
+                case R.id.btn_wechatpay:
                     break;
                 default:
                     break;

@@ -157,6 +157,12 @@
     <string name="title_activity_advocacyandcomplaint">AdvocacyAndComplaint</string>
     <string name="title_activity_otheruserdetail">OtherUserDetailActivity</string>
     <string name="title_activity_otherusermore">OtherUserMore</string>
+    <string name="title_activity_buypoints">BuyPoints</string>
+<string name="title_activity_pay">Pay</string>
+
+
+
+
     <string name="city_name">苏州</string>
     <string name="no_net">说好的网呢？</string>
     <string name="no_net_dialog">无网不欢</string>
